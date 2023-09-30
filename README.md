@@ -73,6 +73,13 @@ const { data, error } = await client.externalOrders.get({
 | **/users**      | ✅   | ✅    | -   | -      |
 | **/users/{id}** | ✅   | -    | -   | -      |
 
+#### Admin Users
+
+| Endpoint              | GET | POST | PUT | DELETE |
+| --------------------- | --- | ---- | --- | ------ |
+| **/admin_users**      | ✅   | -    | -   | -      |
+| **/admin_users/{id}** | ✅   | -    | -   | -      |
+
 
 #### Address Book
 
@@ -94,13 +101,6 @@ const { data, error } = await client.externalOrders.get({
 ### ❌ Not Implemented Yet
 
 
-
-#### Admin Users
-
-| Endpoint              | GET | POST | PUT | DELETE |
-| --------------------- | --- | ---- | --- | ------ |
-| **/admin_users**      | ❌   | -    | -   | -      |
-| **/admin_users/{id}** | ❌   | -    | -   | -      |
 
 #### Bulk Shipments
 
