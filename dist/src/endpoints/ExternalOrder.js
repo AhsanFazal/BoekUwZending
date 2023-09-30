@@ -27,11 +27,11 @@ class ExternalOrderEndpoint extends Base_1.BaseEndpoint {
             return this.httpClient.GET(`/orders/{id}`, { params: { path: { id } } });
         });
     }
-    updateById(id, params) {
+    updateById(id, body) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.PUT(`/orders/{id}`, {
                 params: { path: { id } },
-                body: params
+                body
             });
         });
     }

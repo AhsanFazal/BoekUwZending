@@ -16,10 +16,10 @@ export class ExternalOrderEndpoint extends BaseEndpoint {
     return this.httpClient.GET(`/orders/{id}`, { params: { path: { id } } })
   }
 
-  public async updateById(id: string, params: WriteSchema) {
+  public async updateById(id: string, body: WriteSchema) {
     return this.httpClient.PUT(`/orders/{id}`, {
       params: { path: { id } },
-      body: params
+      body
     })
   }
 
