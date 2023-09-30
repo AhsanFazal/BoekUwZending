@@ -452,7 +452,7 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    updateById(id: string, params: WriteSchema): Promise<import("openapi-fetch").FetchResponse<{
+    updateById(id: string, body: WriteSchema): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
