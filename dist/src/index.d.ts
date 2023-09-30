@@ -1,4 +1,4 @@
-import { MeEndpoint, ExternalOrderEndpoint, TransportEndpoint, UserEndpoint, AddressBookEndpoint, AdminUserEndpoint } from "./endpoints";
+import { MeEndpoint, ExternalOrderEndpoint, TransportEndpoint, UserEndpoint, AddressBookEndpoint, AdminUserEndpoint, BulkShipmentEndpoint, BuzzieEndpoint } from "./endpoints";
 import { paths } from "./lib/api";
 interface ClientConfig {
     clientId: string;
@@ -16,6 +16,8 @@ export default class BoekUwZendingClient {
     user: UserEndpoint;
     addressBook: AddressBookEndpoint;
     adminUser: AdminUserEndpoint;
+    bulkShipment: BulkShipmentEndpoint;
+    buzzie: BuzzieEndpoint;
     constructor(config: ClientConfig);
     private registerEndpoints;
     static create(config: ClientConfig): Promise<BoekUwZendingClient>;

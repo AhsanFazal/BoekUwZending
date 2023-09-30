@@ -20,3 +20,5 @@ __exportStar(require("./Transport"), exports);
 __exportStar(require("./User"), exports);
 __exportStar(require("./AddressBook"), exports);
 __exportStar(require("./AdminUser"), exports);
+__exportStar(require("./BulkShipment"), exports);
+__exportStar(require("./Buzzie"), exports);

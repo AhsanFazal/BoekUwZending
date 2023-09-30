@@ -31,6 +31,8 @@ class BoekUwZendingClient {
         this.user = new endpoints_1.UserEndpoint(this.httpClient);
         this.addressBook = new endpoints_1.AddressBookEndpoint(this.httpClient);
         this.adminUser = new endpoints_1.AdminUserEndpoint(this.httpClient);
+        this.bulkShipment = new endpoints_1.BulkShipmentEndpoint(this.httpClient);
+        this.buzzie = new endpoints_1.BuzzieEndpoint(this.httpClient);
     }
     static create(config) {
         return __awaiter(this, void 0, void 0, function* () {
