@@ -166,13 +166,13 @@ const { data, error } = await client.externalOrders.get({
 
 | Endpoint                  | GET | POST | PUT | DELETE | PATCH |
 | ------------------------- | --- | ---- | --- | ------ | ----- |
-| **/pickup_requests**      | ❌   | ❌    | -   | -      | -     |
-| **/pickup_requests/{id}** | ❌   | -    | ❌   | ❌      | ❌     |
+| **/pickup_requests**      | ✅   | ✅    | -   | -      | -     |
+| **/pickup_requests/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
 
 #### Rate Requests
 
 | Endpoint                  | GET | POST | PUT | DELETE | PATCH |
-| **/rate-request**         | -   | ❌    | -   | -      | -     |
+| **/rate-request**         | -   | ✅    | -   | -      | -     |
 
 
 #### Transport
