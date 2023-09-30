@@ -1,4 +1,6 @@
-# Unofficial BoekUwZending TypeScript SDK for the BoekUwZending API (https://www.boekuwzending.com/)
+# BoekUwZending TypeScript SDK
+
+Unofficial TypeScript SDK for the [BoekUwZending API](https://api.boekuwzending.com/docs/).
 
 ## Installation
 
@@ -46,10 +48,17 @@ const { data, error } = await client.externalOrders.get({
 ```
 
 
-# API Implementation Status
+## API Implementation Status
+
+### Implemented
+
+#### Current User
 
 - [x] **/me**
   - [x] GET
+
+
+#### Orders
 
 - [x] **/orders**
   - [x] GET
@@ -60,6 +69,9 @@ const { data, error } = await client.externalOrders.get({
   - [x] PUT
   - [x] DELETE
 
+### Not Implemented
+
+#### Address Book
 
 - [ ] **/address_book_items**
   - [ ] GET
@@ -67,11 +79,24 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/address_book_items/{id}**
   - [ ] GET
 
+#### Users
+
+- [ ] **/users**
+  - [ ] GET
+  - [ ] POST
+
+- [ ] **/users/{id}**
+  - [ ] GET
+
+#### Admin Users
+
 - [ ] **/admin_users**
   - [ ] GET
 
 - [ ] **/admin_users/{id}**
   - [ ] GET
+
+#### Bulk Shipments
 
 - [ ] **/bulk_shipments**
   - [ ] GET
@@ -79,8 +104,12 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/bulk_shipments/{id}**
   - [ ] GET
 
+#### Buzzie
+
 - [ ] **/buzzie/postcodes**
   - [ ] GET
+
+#### Conversations
 
 - [ ] **/conversations**
   - [ ] GET
@@ -92,6 +121,8 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/conversations/{id}/messages**
   - [ ] GET
 
+#### Countries
+
 - [ ] **/countries**
   - [ ] GET
 
@@ -101,8 +132,13 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/distributors**
   - [ ] GET
 
+#### Distributors
+
 - [ ] **/distributors/{id}**
   - [ ] GET
+
+
+#### Integrations
 
 - [ ] **/integrations**
   - [ ] GET
@@ -116,8 +152,12 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/integrations/{id}**
   - [ ] GET
 
+#### Labels
+
 - [ ] **/labels/{id}**
   - [ ] GET
+
+#### Matrix
 
 - [ ] **/matrices**
   - [ ] GET
@@ -143,12 +183,18 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/matrix_rates/{id}**
   - [ ] GET
 
+
+#### Messages
+
 - [ ] **/messages**
   - [ ] POST
 
 - [ ] **/messages/{id}**
   - [ ] GET
   - [ ] PATCH
+
+
+#### Requests
 
 - [ ] **/pickup_requests**
   - [ ] GET
@@ -163,11 +209,17 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/rate-request**
   - [ ] POST
 
+
+#### Relations
+
 - [ ] **/relations**
   - [ ] GET
 
 - [ ] **/relations/{id}**
   - [ ] GET
+
+
+#### Scan Inbounds
 
 - [ ] **/scan_inbounds**
   - [ ] POST
@@ -175,11 +227,17 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/scan_inbounds/{uuid}**
   - [ ] GET
 
+
+#### Services
+
 - [ ] **/services**
   - [ ] POST
 
 - [ ] **/services/{id}**
   - [ ] GET
+
+
+#### Shipments
 
 - [ ] **/shipment_quotations**
   - [ ] GET
@@ -200,8 +258,14 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/shipments/{id}/labels**
   - [ ] GET
 
+
+#### Surcharge Sets
+
 - [ ] **/surcharge_sets/{id}**
   - [ ] GET
+
+
+#### Tracking
 
 - [ ] **/track-and-trace/{id}**
   - [ ] GET
@@ -211,6 +275,10 @@ const { data, error } = await client.externalOrders.get({
 
 - [ ] **/trackings/{id}**
   - [ ] GET
+
+
+
+#### `/transport`
 
 - [ ] **/transport/depots**
   - [ ] GET
@@ -426,18 +494,18 @@ const { data, error } = await client.externalOrders.get({
 - [ ] **/transport/warehouse_informations**
   - [ ] GET
 
+
+#### Types
+
 - [ ] **/types**
   - [ ] GET
 
 - [ ] **/types/{id}**
   - [ ] GET
+  
 
-- [ ] **/users**
-  - [ ] GET
-  - [ ] POST
 
-- [ ] **/users/{id}**
-  - [ ] GET
+#### Webhooks
 
 - [ ] **/webhooks**
   - [ ] GET
@@ -445,6 +513,9 @@ const { data, error } = await client.externalOrders.get({
 
 - [ ] **/webhooks/{id}**
   - [ ] GET
+
+
+#### Widgets
 
 - [ ] **/widgets**
   - [ ] GET
