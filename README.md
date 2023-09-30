@@ -118,61 +118,49 @@ const { data, error } = await client.externalOrders.get({
 | **/countries**      | ✅   | -    | -   | -      |
 | **/countries/{id}** | ✅   | -    | -   | -      |
 
-
-#### Transport
-
-| Endpoint                    | GET | POST | PUT | DELETE | PATCH |
-| --------------------------- | --- | ---- | --- | ------ | ----- |
-| **/transport/depots**       | ✅   | ✅    | -   | -      | -     |
-| **/transport/depots/{id}**  | ✅   | -    | ✅   | -      | ✅     |
-| **/transport/drivers**      | ✅   | ✅    | -   | -      | -     |
-| **/transport/drivers/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
-
-
-### ❌ Not Implemented Yet
-
 #### Distributors
 
 | Endpoint               | GET | POST | PUT | DELETE |
 | ---------------------- | --- | ---- | --- | ------ |
-| **/distributors**      | ❌   | -    | -   | -      |
-| **/distributors/{id}** | ❌   | -    | -   | -      |
+| **/distributors**      | ✅   | -    | -   | -      |
+| **/distributors/{id}** | ✅   | -    | -   | -      |
 
 
 #### Integrations
 
 | Endpoint                       | GET | POST | PUT | DELETE |
 | ------------------------------ | --- | ---- | --- | ------ |
-| **/integrations**              | ❌   | -    | -   | -      |
-| **/integrations/shopify**      | -   | ❌    | -   | -      |
-| **/integrations/shopify/{id}** | ❌   | -    | -   | -      |
-| **/integrations/{id}**         | ❌   | -    | -   | -      |
+| **/integrations**              | ✅   | -    | -   | -      |
+| **/integrations/shopify**      | -   | ✅    | -   | -      |
+| **/integrations/shopify/{id}** | ✅   | -    | -   | -      |
+| **/integrations/{id}**         | ✅   | -    | -   | -      |
 
 #### Labels
 
 | Endpoint         | GET | POST | PUT | DELETE |
 | ---------------- | --- | ---- | --- | ------ |
-| **/labels/{id}** | ❌   | -    | -   | -      |
+| **/labels/{id}** | ✅   | -    | -   | -      |
 
 #### Matrix
 
 | Endpoint                   | GET | POST | PUT | DELETE |
 | -------------------------- | --- | ---- | --- | ------ |
-| **/matrices**              | ❌   | -    | -   | -      |
-| **/matrices/{id}**         | ❌   | -    | -   | -      |
-| **/matrix_groups**         | ❌   | -    | -   | -      |
-| **/matrix_groups/{id}**    | ❌   | -    | -   | -      |
-| **/matrix_postcodes**      | ❌   | -    | -   | -      |
-| **/matrix_postcodes/{id}** | ❌   | -    | -   | -      |
-| **/matrix_rates**          | ❌   | -    | -   | -      |
-| **/matrix_rates/{id}**     | ❌   | -    | -   | -      |
+| **/matrices**              | ✅   | -    | -   | -      |
+| **/matrices/{id}**         | ✅   | -    | -   | -      |
+| **/matrix_groups**         | ✅   | -    | -   | -      |
+| **/matrix_groups/{id}**    | ✅   | -    | -   | -      |
+| **/matrix_postcodes**      | ✅   | -    | -   | -      |
+| **/matrix_postcodes/{id}** | ✅   | -    | -   | -      |
+| **/matrix_rates**          | ✅   | -    | -   | -      |
+| **/matrix_rates/{id}**     | ✅   | -    | -   | -      |
 
 #### Messages
 
 | Endpoint           | GET | POST | PUT | DELETE |
 | ------------------ | --- | ---- | --- | ------ |
-| **/messages**      | -   | ❌    | -   | -      |
-| **/messages/{id}** | ❌   | -    | ❌   | -      |
+| **/messages**      | -   | ✅    | -   | -      |
+| **/messages/{id}** | ✅   | -    | ✅   | -      |
+
 
 #### Pickup Requests
 
@@ -185,6 +173,18 @@ const { data, error } = await client.externalOrders.get({
 
 | Endpoint                  | GET | POST | PUT | DELETE | PATCH |
 | **/rate-request**         | -   | ❌    | -   | -      | -     |
+
+
+#### Transport
+
+| Endpoint                    | GET | POST | PUT | DELETE | PATCH |
+| --------------------------- | --- | ---- | --- | ------ | ----- |
+| **/transport/depots**       | ✅   | ✅    | -   | -      | -     |
+| **/transport/depots/{id}**  | ✅   | -    | ✅   | -      | ✅     |
+| **/transport/drivers**      | ✅   | ✅    | -   | -      | -     |
+| **/transport/drivers/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
+
+### ❌ Not Implemented Yet
 
 #### Relations
 

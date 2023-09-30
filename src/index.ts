@@ -9,7 +9,14 @@ import {
   BulkShipmentEndpoint,
   BuzzieEndpoint,
   ConversationEndpoint,
-  CountryEndpoint
+  CountryEndpoint,
+  DistributorEndpoint,
+  IntegrationEndpoint,
+  LabelEndpoint,
+  MatrixEndpoint,
+  MessageEndpoint,
+  PickupRequestEndpoint,
+  RateRequestEndpoint
 } from "./endpoints"
 import { paths } from "./lib/api"
 
@@ -42,6 +49,13 @@ export default class BoekUwZendingClient {
   public buzzie!: BuzzieEndpoint
   public conversation!: ConversationEndpoint
   public country!: CountryEndpoint
+  public distributor!: DistributorEndpoint
+  public integration!: IntegrationEndpoint
+  public label!: LabelEndpoint
+  public matrix!: MatrixEndpoint
+  public message!: MessageEndpoint
+  public pickupRequest!: PickupRequestEndpoint
+  public rateRequest!: RateRequestEndpoint
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
@@ -59,6 +73,13 @@ export default class BoekUwZendingClient {
     this.buzzie = new BuzzieEndpoint(this.httpClient)
     this.conversation = new ConversationEndpoint(this.httpClient)
     this.country = new CountryEndpoint(this.httpClient)
+    this.distributor = new DistributorEndpoint(this.httpClient)
+    this.integration = new IntegrationEndpoint(this.httpClient)
+    this.label = new LabelEndpoint(this.httpClient)
+    this.matrix = new MatrixEndpoint(this.httpClient)
+    this.message = new MessageEndpoint(this.httpClient)
+    this.pickupRequest = new PickupRequestEndpoint(this.httpClient)
+    this.rateRequest = new RateRequestEndpoint(this.httpClient)
   }
 
   public static async create(

@@ -35,6 +35,13 @@ class BoekUwZendingClient {
         this.buzzie = new endpoints_1.BuzzieEndpoint(this.httpClient);
         this.conversation = new endpoints_1.ConversationEndpoint(this.httpClient);
         this.country = new endpoints_1.CountryEndpoint(this.httpClient);
+        this.distributor = new endpoints_1.DistributorEndpoint(this.httpClient);
+        this.integration = new endpoints_1.IntegrationEndpoint(this.httpClient);
+        this.label = new endpoints_1.LabelEndpoint(this.httpClient);
+        this.matrix = new endpoints_1.MatrixEndpoint(this.httpClient);
+        this.message = new endpoints_1.MessageEndpoint(this.httpClient);
+        this.pickupRequest = new endpoints_1.PickupRequestEndpoint(this.httpClient);
+        this.rateRequest = new endpoints_1.RateRequestEndpoint(this.httpClient);
     }
     static create(config) {
         return __awaiter(this, void 0, void 0, function* () {
