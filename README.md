@@ -101,6 +101,24 @@ const { data, error } = await client.externalOrders.get({
 | Endpoint              | GET | POST | PUT | DELETE |
 | --------------------- | --- | ---- | --- | ------ |
 | **/buzzie/postcodes** | ✅   | -    | -   | -      |
+
+
+#### Conversations
+
+| Endpoint                         | GET | POST | PUT | DELETE |
+| -------------------------------- | --- | ---- | --- | ------ |
+| **/conversations**               | ✅   | ✅    | -   | -      |
+| **/conversations/{id}**          | ✅   | -    | -   | -      |
+| **/conversations/{id}/messages** | ✅   | -    | -   | -      |
+
+#### Countries
+
+| Endpoint            | GET | POST | PUT | DELETE |
+| ------------------- | --- | ---- | --- | ------ |
+| **/countries**      | ✅   | -    | -   | -      |
+| **/countries/{id}** | ✅   | -    | -   | -      |
+
+
 #### Transport
 
 | Endpoint                    | GET | POST | PUT | DELETE | PATCH |
@@ -112,21 +130,6 @@ const { data, error } = await client.externalOrders.get({
 
 
 ### ❌ Not Implemented Yet
-
-#### Conversations
-
-| Endpoint                         | GET | POST | PUT | DELETE |
-| -------------------------------- | --- | ---- | --- | ------ |
-| **/conversations**               | ❌   | ❌    | -   | -      |
-| **/conversations/{id}**          | ❌   | -    | -   | -      |
-| **/conversations/{id}/messages** | ❌   | -    | -   | -      |
-
-#### Countries
-
-| Endpoint            | GET | POST | PUT | DELETE |
-| ------------------- | --- | ---- | --- | ------ |
-| **/countries**      | ❌   | -    | -   | -      |
-| **/countries/{id}** | ❌   | -    | -   | -      |
 
 #### Distributors
 
@@ -216,6 +219,44 @@ const { data, error } = await client.externalOrders.get({
 | **/shipments/{id}/labels**    | ❌   | -    | -   | -      |
 
 
+
+#### Surcharge Sets
+
+| Endpoint                 | GET | POST | PUT | DELETE | PATCH |
+| ------------------------ | --- | ---- | --- | ------ | ----- |
+| **/surcharge_sets/{id}** | ❌   | -    | -   | -      | -     |
+
+#### Tracking
+
+| Endpoint                  | GET | POST | PUT | DELETE | PATCH |
+| ------------------------- | --- | ---- | --- | ------ | ----- |
+| **/track-and-trace/{id}** | ❌   | -    | -   | -      | -     |
+| **/trackings**            | ❌   | -    | -   | -      | -     |
+| **/trackings/{id}**       | ❌   | -    | -   | -      | -     |
+
+#### Types
+
+| Endpoint        | GET | POST | PUT | DELETE | PATCH |
+| --------------- | --- | ---- | --- | ------ | ----- |
+| **/types**      | ❌   | -    | -   | -      | -     |
+| **/types/{id}** | ❌   | -    | -   | -      | -     |
+
+#### Webhooks
+
+| Endpoint           | GET | POST | PUT | DELETE | PATCH |
+| ------------------ | --- | ---- | --- | ------ | ----- |
+| **/webhooks**      | ❌   | ❌    | -   | -      | -     |
+| **/webhooks/{id}** | ❌   | -    | -   | -      | -     |
+
+#### Widgets
+
+| Endpoint          | GET | POST | PUT | DELETE | PATCH |
+| ----------------- | --- | ---- | --- | ------ | ----- |
+| **/widgets**      | ❌   | -    | -   | -      | -     |
+| **/widgets/{id}** | ❌   | -    | -   | -      | -     |
+
+
+
 #### Transport
 
 
@@ -273,40 +314,4 @@ const { data, error } = await client.externalOrders.get({
 | **/transport/vehicles/{id}**                                    | ❌   | -    | ❌   | ❌      | ❌     |
 | **/transport/warehouse/{waybill}/info**                         | ❌   | -    | -   | -      | -     |
 | **/transport/warehouse_informations**                           | ❌   | -    | -   | -      | -     |
-
-
-#### Surcharge Sets
-
-| Endpoint                 | GET | POST | PUT | DELETE | PATCH |
-| ------------------------ | --- | ---- | --- | ------ | ----- |
-| **/surcharge_sets/{id}** | ❌   | -    | -   | -      | -     |
-
-#### Tracking
-
-| Endpoint                  | GET | POST | PUT | DELETE | PATCH |
-| ------------------------- | --- | ---- | --- | ------ | ----- |
-| **/track-and-trace/{id}** | ❌   | -    | -   | -      | -     |
-| **/trackings**            | ❌   | -    | -   | -      | -     |
-| **/trackings/{id}**       | ❌   | -    | -   | -      | -     |
-
-#### Types
-
-| Endpoint        | GET | POST | PUT | DELETE | PATCH |
-| --------------- | --- | ---- | --- | ------ | ----- |
-| **/types**      | ❌   | -    | -   | -      | -     |
-| **/types/{id}** | ❌   | -    | -   | -      | -     |
-
-#### Webhooks
-
-| Endpoint           | GET | POST | PUT | DELETE | PATCH |
-| ------------------ | --- | ---- | --- | ------ | ----- |
-| **/webhooks**      | ❌   | ❌    | -   | -      | -     |
-| **/webhooks/{id}** | ❌   | -    | -   | -      | -     |
-
-#### Widgets
-
-| Endpoint          | GET | POST | PUT | DELETE | PATCH |
-| ----------------- | --- | ---- | --- | ------ | ----- |
-| **/widgets**      | ❌   | -    | -   | -      | -     |
-| **/widgets/{id}** | ❌   | -    | -   | -      | -     |
 

@@ -33,6 +33,8 @@ class BoekUwZendingClient {
         this.adminUser = new endpoints_1.AdminUserEndpoint(this.httpClient);
         this.bulkShipment = new endpoints_1.BulkShipmentEndpoint(this.httpClient);
         this.buzzie = new endpoints_1.BuzzieEndpoint(this.httpClient);
+        this.conversation = new endpoints_1.ConversationEndpoint(this.httpClient);
+        this.country = new endpoints_1.CountryEndpoint(this.httpClient);
     }
     static create(config) {
         return __awaiter(this, void 0, void 0, function* () {

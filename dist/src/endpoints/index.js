@@ -22,3 +22,5 @@ __exportStar(require("./AddressBook"), exports);
 __exportStar(require("./AdminUser"), exports);
 __exportStar(require("./BulkShipment"), exports);
 __exportStar(require("./Buzzie"), exports);
+__exportStar(require("./Conversation"), exports);
+__exportStar(require("./Country"), exports);

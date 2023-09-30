@@ -6,3 +6,5 @@ export * from "./AddressBook";
 export * from "./AdminUser";
 export * from "./BulkShipment";
 export * from "./Buzzie";
+export * from "./Conversation";
+export * from "./Country";
