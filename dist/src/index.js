@@ -24,6 +24,14 @@ class BoekUwZendingClient {
         this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production;
         this.baseClient = (0, openapi_fetch_1.default)();
     }
+    registerEndpoints() {
+        this.me = new endpoints_1.MeEndpoint(this.httpClient);
+        this.externalOrders = new endpoints_1.ExternalOrderEndpoint(this.httpClient);
+        this.transport = new endpoints_1.TransportEndpoint(this.httpClient);
+        this.user = new endpoints_1.UserEndpoint(this.httpClient);
+        this.addressBook = new endpoints_1.AddressBookEndpoint(this.httpClient);
+        this.adminUser = new endpoints_1.AdminUserEndpoint(this.httpClient);
+    }
     static create(config) {
         return __awaiter(this, void 0, void 0, function* () {
             const client = new BoekUwZendingClient(config);
@@ -44,12 +52,6 @@ class BoekUwZendingClient {
                 return newClient[key];
             }
         });
-    }
-    registerEndpoints() {
-        this.me = new endpoints_1.MeEndpoint(this.httpClient);
-        this.externalOrders = new endpoints_1.ExternalOrderEndpoint(this.httpClient);
-        this.transport = new endpoints_1.TransportEndpoint(this.httpClient);
-        this.user = new endpoints_1.UserEndpoint(this.httpClient);
     }
     authorize(config) {
         var _a;

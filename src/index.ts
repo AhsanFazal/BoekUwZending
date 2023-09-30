@@ -3,7 +3,8 @@ import {
   MeEndpoint,
   ExternalOrderEndpoint,
   TransportEndpoint,
-  UserEndpoint
+  UserEndpoint,
+  AddressBookEndpoint,
 } from "./endpoints"
 import { paths } from "./lib/api"
 
@@ -30,10 +31,19 @@ export default class BoekUwZendingClient {
   public externalOrders!: ExternalOrderEndpoint
   public transport!: TransportEndpoint
   public user!: UserEndpoint
+  public addressBook!: AddressBookEndpoint
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
     this.baseClient = createClient<paths>()
+  }
+
+  private registerEndpoints(): void {
+    this.me = new MeEndpoint(this.httpClient)
+    this.externalOrders = new ExternalOrderEndpoint(this.httpClient)
+    this.transport = new TransportEndpoint(this.httpClient)
+    this.user = new UserEndpoint(this.httpClient)
+    this.addressBook = new AddressBookEndpoint(this.httpClient)
   }
 
   public static async create(
@@ -57,13 +67,6 @@ export default class BoekUwZendingClient {
         return newClient[key]
       }
     })
-  }
-
-  private registerEndpoints(): void {
-    this.me = new MeEndpoint(this.httpClient)
-    this.externalOrders = new ExternalOrderEndpoint(this.httpClient)
-    this.transport = new TransportEndpoint(this.httpClient)
-    this.user = new UserEndpoint(this.httpClient)
   }
 
   public async authorize(config: ClientConfig) {

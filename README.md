@@ -73,6 +73,14 @@ const { data, error } = await client.externalOrders.get({
 | **/users**      | ✅   | ✅    | -   | -      |
 | **/users/{id}** | ✅   | -    | -   | -      |
 
+
+#### Address Book
+
+| Endpoint                     | GET | POST | PUT | DELETE |
+| ---------------------------- | --- | ---- | --- | ------ |
+| **/address_book_items**      | ✅   | -    | -   | -      |
+| **/address_book_items/{id}** | ✅   | -    | -   | -      |
+
 #### Transport
 
 | Endpoint                    | GET | POST | PUT | DELETE | PATCH |
@@ -83,14 +91,9 @@ const { data, error } = await client.externalOrders.get({
 | **/transport/drivers/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
 
 
-### ❌ Not Implemented
+### ❌ Not Implemented Yet
 
-#### Address Book
 
-| Endpoint                     | GET | POST | PUT | DELETE |
-| ---------------------------- | --- | ---- | --- | ------ |
-| **/address_book_items**      | ❌   | -    | -   | -      |
-| **/address_book_items/{id}** | ❌   | -    | -   | -      |
 
 #### Admin Users
 

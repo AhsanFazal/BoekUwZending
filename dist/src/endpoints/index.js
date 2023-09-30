@@ -18,3 +18,5 @@ __exportStar(require("./Me"), exports);
 __exportStar(require("./ExternalOrder"), exports);
 __exportStar(require("./Transport"), exports);
 __exportStar(require("./User"), exports);
+__exportStar(require("./AddressBook"), exports);
+__exportStar(require("./AdminUser"), exports);

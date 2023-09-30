@@ -1,4 +1,4 @@
-import { MeEndpoint, ExternalOrderEndpoint, TransportEndpoint, UserEndpoint } from "./endpoints";
+import { MeEndpoint, ExternalOrderEndpoint, TransportEndpoint, UserEndpoint, AddressBookEndpoint, AdminUserEndpoint } from "./endpoints";
 import { paths } from "./lib/api";
 interface ClientConfig {
     clientId: string;
@@ -14,7 +14,10 @@ export default class BoekUwZendingClient {
     externalOrders: ExternalOrderEndpoint;
     transport: TransportEndpoint;
     user: UserEndpoint;
+    addressBook: AddressBookEndpoint;
+    adminUser: AdminUserEndpoint;
     constructor(config: ClientConfig);
+    private registerEndpoints;
     static create(config: ClientConfig): Promise<BoekUwZendingClient>;
     get httpClient(): {
         GET<P extends import("openapi-typescript-helpers").PathsWithMethod<paths, "get">>(url: P, init: import("openapi-fetch").FetchOptions<import("openapi-typescript-helpers").FilterKeys<paths[P], "get">>): Promise<import("openapi-fetch").FetchResponse<"get" extends keyof paths[P] ? paths[P][keyof paths[P] & "get"] : unknown>>;
@@ -26,7 +29,6 @@ export default class BoekUwZendingClient {
         PATCH<P_6 extends import("openapi-typescript-helpers").PathsWithMethod<paths, "patch">>(url: P_6, init: import("openapi-fetch").FetchOptions<import("openapi-typescript-helpers").FilterKeys<paths[P_6], "patch">>): Promise<import("openapi-fetch").FetchResponse<"patch" extends keyof paths[P_6] ? paths[P_6][keyof paths[P_6] & "patch"] : unknown>>;
         TRACE<P_7 extends never>(url: P_7, init: import("openapi-fetch").FetchOptions<import("openapi-typescript-helpers").FilterKeys<paths[P_7], "trace">>): Promise<import("openapi-fetch").FetchResponse<"trace" extends keyof paths[P_7] ? paths[P_7][keyof paths[P_7] & "trace"] : unknown>>;
     };
-    private registerEndpoints;
     authorize(config: ClientConfig): Promise<void>;
 }
 export {};
