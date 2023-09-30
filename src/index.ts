@@ -5,6 +5,7 @@ import {
   TransportEndpoint,
   UserEndpoint,
   AddressBookEndpoint,
+  AdminUserEndpoint
 } from "./endpoints"
 import { paths } from "./lib/api"
 
@@ -32,6 +33,7 @@ export default class BoekUwZendingClient {
   public transport!: TransportEndpoint
   public user!: UserEndpoint
   public addressBook!: AddressBookEndpoint
+  public adminUser!: AdminUserEndpoint
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
@@ -44,6 +46,7 @@ export default class BoekUwZendingClient {
     this.transport = new TransportEndpoint(this.httpClient)
     this.user = new UserEndpoint(this.httpClient)
     this.addressBook = new AddressBookEndpoint(this.httpClient)
+    this.adminUser = new AdminUserEndpoint(this.httpClient)
   }
 
   public static async create(
