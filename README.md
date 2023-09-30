@@ -171,8 +171,9 @@ const { data, error } = await client.externalOrders.get({
 
 #### Rate Requests
 
-| Endpoint                  | GET | POST | PUT | DELETE | PATCH |
-| **/rate-request**         | -   | ✅    | -   | -      | -     |
+| Endpoint          | GET | POST | PUT | DELETE | PATCH |
+| ----------------- | --- | ---- | --- | ------ | ----- |
+| **/rate-request** | -   | ✅    | -   | -      | -     |
 
 
 #### Transport
