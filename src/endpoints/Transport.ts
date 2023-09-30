@@ -3,10 +3,12 @@ import { BaseEndpoint } from "./Base"
 
 export class TransportEndpoint extends BaseEndpoint {
   public depots!: Depots
+  public drivers!: Drivers
 
   constructor(httpClient: BaseEndpoint["httpClient"]) {
     super(httpClient)
     this.depots = new Depots(httpClient)
+    this.drivers = new Drivers(httpClient)
   }
 }
 

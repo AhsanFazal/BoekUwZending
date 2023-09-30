@@ -15,6 +15,7 @@ class TransportEndpoint extends Base_1.BaseEndpoint {
     constructor(httpClient) {
         super(httpClient);
         this.depots = new Depots(httpClient);
+        this.drivers = new Drivers(httpClient);
     }
 }
 exports.TransportEndpoint = TransportEndpoint;
