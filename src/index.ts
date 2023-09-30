@@ -5,7 +5,9 @@ import {
   TransportEndpoint,
   UserEndpoint,
   AddressBookEndpoint,
-  AdminUserEndpoint
+  AdminUserEndpoint,
+  BulkShipmentEndpoint,
+  BuzzieEndpoint
 } from "./endpoints"
 import { paths } from "./lib/api"
 
@@ -34,6 +36,8 @@ export default class BoekUwZendingClient {
   public user!: UserEndpoint
   public addressBook!: AddressBookEndpoint
   public adminUser!: AdminUserEndpoint
+  public bulkShipment!: BulkShipmentEndpoint
+  public buzzie!: BuzzieEndpoint
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
@@ -47,6 +51,8 @@ export default class BoekUwZendingClient {
     this.user = new UserEndpoint(this.httpClient)
     this.addressBook = new AddressBookEndpoint(this.httpClient)
     this.adminUser = new AdminUserEndpoint(this.httpClient)
+    this.bulkShipment = new BulkShipmentEndpoint(this.httpClient)
+    this.buzzie = new BuzzieEndpoint(this.httpClient)
   }
 
   public static async create(

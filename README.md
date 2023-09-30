@@ -88,6 +88,19 @@ const { data, error } = await client.externalOrders.get({
 | **/address_book_items**      | ✅   | -    | -   | -      |
 | **/address_book_items/{id}** | ✅   | -    | -   | -      |
 
+#### Bulk Shipments
+
+| Endpoint                 | GET | POST | PUT | DELETE |
+| ------------------------ | --- | ---- | --- | ------ |
+| **/bulk_shipments**      | ✅   | -    | -   | -      |
+| **/bulk_shipments/{id}** | ✅   | -    | -   | -      |
+
+
+#### Buzzie
+
+| Endpoint              | GET | POST | PUT | DELETE |
+| --------------------- | --- | ---- | --- | ------ |
+| **/buzzie/postcodes** | ✅   | -    | -   | -      |
 #### Transport
 
 | Endpoint                    | GET | POST | PUT | DELETE | PATCH |
@@ -99,23 +112,6 @@ const { data, error } = await client.externalOrders.get({
 
 
 ### ❌ Not Implemented Yet
-
-
-
-#### Bulk Shipments
-
-| Endpoint                 | GET | POST | PUT | DELETE |
-| ------------------------ | --- | ---- | --- | ------ |
-| **/bulk_shipments**      | ❌   | -    | -   | -      |
-| **/bulk_shipments/{id}** | ❌   | -    | -   | -      |
-
-
-
-#### Buzzie
-
-| Endpoint              | GET | POST | PUT | DELETE |
-| --------------------- | --- | ---- | --- | ------ |
-| **/buzzie/postcodes** | ❌   | -    | -   | -      |
 
 #### Conversations
 
