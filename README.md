@@ -131,12 +131,12 @@ const { data, error } = await client.externalOrders.get({
 | ------------------- | --- | ---- | --- | ------ |
 | **/countries**      | ❌   | -    | -   | -      |
 | **/countries/{id}** | ❌   | -    | -   | -      |
-| **/distributors**   | ❌   | -    | -   | -      |
 
 #### Distributors
 
 | Endpoint               | GET | POST | PUT | DELETE |
 | ---------------------- | --- | ---- | --- | ------ |
+| **/distributors**      | ❌   | -    | -   | -      |
 | **/distributors/{id}** | ❌   | -    | -   | -      |
 
 
