@@ -50,148 +50,119 @@ const { data, error } = await client.externalOrders.get({
 
 ## API Implementation Status
 
-### Implemented
+### ✅ Implemented
 
 #### Current User
 
-- [x] **/me**
-  - [x] GET
-
+| Endpoint | GET | POST | PUT | DELETE |
+| -------- | --- | ---- | --- | ------ |
+| **/me**  | ✅   | -    | -   | -      |
 
 #### Orders
 
-- [x] **/orders**
-  - [x] GET
-  - [x] POST
+| Endpoint         | GET | POST | PUT | DELETE |
+| ---------------- | --- | ---- | --- | ------ |
+| **/orders**      | ✅   | ✅    | -   | -      |
+| **/orders/{id}** | ✅   | -    | ✅   | ✅      |
 
-- [x] **/orders/{id}**
-  - [x] GET
-  - [x] PUT
-  - [x] DELETE
 
-### Not Implemented
+### ❌ Not Implemented
 
 #### Address Book
 
-- [ ] **/address_book_items**
-  - [ ] GET
+| Endpoint                     | GET | POST | PUT | DELETE |
+| ---------------------------- | --- | ---- | --- | ------ |
+| **/address_book_items**      | ❌   | -    | -   | -      |
+| **/address_book_items/{id}** | ❌   | -    | -   | -      |
 
-- [ ] **/address_book_items/{id}**
-  - [ ] GET
 
 #### Users
 
-- [ ] **/users**
-  - [ ] GET
-  - [ ] POST
-
-- [ ] **/users/{id}**
-  - [ ] GET
+| Endpoint        | GET | POST | PUT | DELETE |
+| --------------- | --- | ---- | --- | ------ |
+| **/users**      | ❌   | ❌    | -   | -      |
+| **/users/{id}** | ❌   | -    | -   | -      |
 
 #### Admin Users
 
-- [ ] **/admin_users**
-  - [ ] GET
-
-- [ ] **/admin_users/{id}**
-  - [ ] GET
+| Endpoint              | GET | POST | PUT | DELETE |
+| --------------------- | --- | ---- | --- | ------ |
+| **/admin_users**      | ❌   | -    | -   | -      |
+| **/admin_users/{id}** | ❌   | -    | -   | -      |
 
 #### Bulk Shipments
 
-- [ ] **/bulk_shipments**
-  - [ ] GET
+| Endpoint                 | GET | POST | PUT | DELETE |
+| ------------------------ | --- | ---- | --- | ------ |
+| **/bulk_shipments**      | ❌   | -    | -   | -      |
+| **/bulk_shipments/{id}** | ❌   | -    | -   | -      |
 
-- [ ] **/bulk_shipments/{id}**
-  - [ ] GET
+
 
 #### Buzzie
 
-- [ ] **/buzzie/postcodes**
-  - [ ] GET
+| Endpoint              | GET | POST | PUT | DELETE |
+| --------------------- | --- | ---- | --- | ------ |
+| **/buzzie/postcodes** | ❌   | -    | -   | -      |
 
 #### Conversations
 
-- [ ] **/conversations**
-  - [ ] GET
-  - [ ] POST
-
-- [ ] **/conversations/{id}**
-  - [ ] GET
-
-- [ ] **/conversations/{id}/messages**
-  - [ ] GET
+| Endpoint                         | GET | POST | PUT | DELETE |
+| -------------------------------- | --- | ---- | --- | ------ |
+| **/conversations**               | ❌   | ❌    | -   | -      |
+| **/conversations/{id}**          | ❌   | -    | -   | -      |
+| **/conversations/{id}/messages** | ❌   | -    | -   | -      |
 
 #### Countries
 
-- [ ] **/countries**
-  - [ ] GET
-
-- [ ] **/countries/{id}**
-  - [ ] GET
-
-- [ ] **/distributors**
-  - [ ] GET
+| Endpoint            | GET | POST | PUT | DELETE |
+| ------------------- | --- | ---- | --- | ------ |
+| **/countries**      | ❌   | -    | -   | -      |
+| **/countries/{id}** | ❌   | -    | -   | -      |
+| **/distributors**   | ❌   | -    | -   | -      |
 
 #### Distributors
 
-- [ ] **/distributors/{id}**
-  - [ ] GET
+| Endpoint               | GET | POST | PUT | DELETE |
+| ---------------------- | --- | ---- | --- | ------ |
+| **/distributors/{id}** | ❌   | -    | -   | -      |
 
 
 #### Integrations
 
-- [ ] **/integrations**
-  - [ ] GET
-
-- [ ] **/integrations/shopify**
-  - [ ] POST
-
-- [ ] **/integrations/shopify/{id}**
-  - [ ] GET
-
-- [ ] **/integrations/{id}**
-  - [ ] GET
+| Endpoint                       | GET | POST | PUT | DELETE |
+| ------------------------------ | --- | ---- | --- | ------ |
+| **/integrations**              | ❌   | -    | -   | -      |
+| **/integrations/shopify**      | -   | ❌    | -   | -      |
+| **/integrations/shopify/{id}** | ❌   | -    | -   | -      |
+| **/integrations/{id}**         | ❌   | -    | -   | -      |
 
 #### Labels
 
-- [ ] **/labels/{id}**
-  - [ ] GET
+| Endpoint         | GET | POST | PUT | DELETE |
+| ---------------- | --- | ---- | --- | ------ |
+| **/labels/{id}** | ❌   | -    | -   | -      |
 
 #### Matrix
 
-- [ ] **/matrices**
-  - [ ] GET
-
-- [ ] **/matrices/{id}**
-  - [ ] GET
-
-- [ ] **/matrix_groups**
-  - [ ] GET
-
-- [ ] **/matrix_groups/{id}**
-  - [ ] GET
-
-- [ ] **/matrix_postcodes**
-  - [ ] GET
-
-- [ ] **/matrix_postcodes/{id}**
-  - [ ] GET
-
-- [ ] **/matrix_rates**
-  - [ ] GET
-
-- [ ] **/matrix_rates/{id}**
-  - [ ] GET
-
+| Endpoint                   | GET | POST | PUT | DELETE |
+| -------------------------- | --- | ---- | --- | ------ |
+| **/matrices**              | ❌   | -    | -   | -      |
+| **/matrices/{id}**         | ❌   | -    | -   | -      |
+| **/matrix_groups**         | ❌   | -    | -   | -      |
+| **/matrix_groups/{id}**    | ❌   | -    | -   | -      |
+| **/matrix_postcodes**      | ❌   | -    | -   | -      |
+| **/matrix_postcodes/{id}** | ❌   | -    | -   | -      |
+| **/matrix_rates**          | ❌   | -    | -   | -      |
+| **/matrix_rates/{id}**     | ❌   | -    | -   | -      |
 
 #### Messages
 
-- [ ] **/messages**
-  - [ ] POST
+| Endpoint           | GET | POST | PUT | DELETE |
+| ------------------ | --- | ---- | --- | ------ |
+| **/messages**      | -   | ❌    | -   | -      |
+| **/messages/{id}** | ❌   | -    | ❌   | -      |
 
-- [ ] **/messages/{id}**
-  - [ ] GET
-  - [ ] PATCH
 
 
 #### Requests
