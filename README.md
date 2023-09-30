@@ -66,6 +66,16 @@ const { data, error } = await client.externalOrders.get({
 | **/orders/{id}** | ✅   | -    | ✅   | ✅      |
 
 
+#### Transport
+
+| Endpoint                    | GET | POST | PUT | DELETE | PATCH |
+| --------------------------- | --- | ---- | --- | ------ | ----- |
+| **/transport/depots**       | ✅   | ✅    | -   | -      | -     |
+| **/transport/depots/{id}**  | ✅   | -    | ✅   | -      | ✅     |
+| **/transport/drivers**      | ✅   | ✅    | -   | -      | -     |
+| **/transport/drivers/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
+
+
 ### ❌ Not Implemented
 
 #### Address Book
@@ -209,10 +219,6 @@ const { data, error } = await client.externalOrders.get({
 
 | Endpoint                                                        | GET | POST | PUT | DELETE | PATCH |
 | --------------------------------------------------------------- | --- | ---- | --- | ------ | ----- |
-| **/transport/depots**                                           | ❌   | ❌    | -   | -      | -     |
-| **/transport/depots/{id}**                                      | ❌   | -    | ❌   | -      | ❌     |
-| **/transport/drivers**                                          | ❌   | ❌    | -   | -      | -     |
-| **/transport/drivers/{id}**                                     | ❌   | -    | ❌   | ❌      | ❌     |
 | **/transport/excluded_pickups**                                 | ❌   | ❌    | -   | -      | -     |
 | **/transport/excluded_pickups/{id}**                            | ❌   | -    | ❌   | -      | ❌     |
 | **/transport/pickup_requests**                                  | ❌   | ❌    | -   | -      | -     |
