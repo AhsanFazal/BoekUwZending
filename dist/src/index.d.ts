@@ -1,4 +1,4 @@
-import { MeEndpoint, ExternalOrderEndpoint } from "./endpoints";
+import { MeEndpoint, ExternalOrderEndpoint, TransportEndpoint, UserEndpoint } from "./endpoints";
 import { paths } from "./lib/api";
 interface ClientConfig {
     clientId: string;
@@ -12,6 +12,8 @@ export default class BoekUwZendingClient {
     private accessToken?;
     me: MeEndpoint;
     externalOrders: ExternalOrderEndpoint;
+    transport: TransportEndpoint;
+    user: UserEndpoint;
     constructor(config: ClientConfig);
     static create(config: ClientConfig): Promise<BoekUwZendingClient>;
     get httpClient(): {

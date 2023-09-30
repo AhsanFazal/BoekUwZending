@@ -48,6 +48,8 @@ class BoekUwZendingClient {
     registerEndpoints() {
         this.me = new endpoints_1.MeEndpoint(this.httpClient);
         this.externalOrders = new endpoints_1.ExternalOrderEndpoint(this.httpClient);
+        this.transport = new endpoints_1.TransportEndpoint(this.httpClient);
+        this.user = new endpoints_1.UserEndpoint(this.httpClient);
     }
     authorize(config) {
         var _a;

@@ -1,5 +1,10 @@
 import createClient from "openapi-fetch"
-import { MeEndpoint, ExternalOrderEndpoint } from "./endpoints"
+import {
+  MeEndpoint,
+  ExternalOrderEndpoint,
+  TransportEndpoint,
+  UserEndpoint
+} from "./endpoints"
 import { paths } from "./lib/api"
 
 interface ClientConfig {
@@ -23,6 +28,8 @@ export default class BoekUwZendingClient {
   // Public Endpoint Handlers
   public me!: MeEndpoint
   public externalOrders!: ExternalOrderEndpoint
+  public transport!: TransportEndpoint
+  public user!: UserEndpoint
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
@@ -55,6 +62,8 @@ export default class BoekUwZendingClient {
   private registerEndpoints(): void {
     this.me = new MeEndpoint(this.httpClient)
     this.externalOrders = new ExternalOrderEndpoint(this.httpClient)
+    this.transport = new TransportEndpoint(this.httpClient)
+    this.user = new UserEndpoint(this.httpClient)
   }
 
   public async authorize(config: ClientConfig) {

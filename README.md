@@ -66,6 +66,13 @@ const { data, error } = await client.externalOrders.get({
 | **/orders/{id}** | ✅   | -    | ✅   | ✅      |
 
 
+#### Users
+
+| Endpoint        | GET | POST | PUT | DELETE |
+| --------------- | --- | ---- | --- | ------ |
+| **/users**      | ✅   | ✅    | -   | -      |
+| **/users/{id}** | ✅   | -    | -   | -      |
+
 #### Transport
 
 | Endpoint                    | GET | POST | PUT | DELETE | PATCH |
@@ -84,14 +91,6 @@ const { data, error } = await client.externalOrders.get({
 | ---------------------------- | --- | ---- | --- | ------ |
 | **/address_book_items**      | ❌   | -    | -   | -      |
 | **/address_book_items/{id}** | ❌   | -    | -   | -      |
-
-
-#### Users
-
-| Endpoint        | GET | POST | PUT | DELETE |
-| --------------- | --- | ---- | --- | ------ |
-| **/users**      | ❌   | ❌    | -   | -      |
-| **/users/{id}** | ❌   | -    | -   | -      |
 
 #### Admin Users
 
