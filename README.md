@@ -8,13 +8,13 @@ Unofficial TypeScript API client for the [BoekUwZending API](https://api.boekuwz
 ### npm
 
 ```bash
-npm install @boekuwzending/api
+npm install boekuwzending-api
 ```
 
 ### yarn
 
 ```bash
-yarn add @boekuwzending/api
+yarn add boekuwzending-api
 ```
 
 ## Usage
