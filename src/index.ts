@@ -105,9 +105,9 @@ export default class BoekUwZendingClient {
     })
   }
 
-  public async authorize(config: ClientConfig) {
     const method = "POST"
     const url = "/token"
+  public async authorize(config: ClientConfig): Promise<void> {
     const data = {
       client_id: config.clientId,
       client_secret: config.clientSecret,
