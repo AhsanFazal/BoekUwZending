@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`endpoints should export all endpoints 1`] = `
+[
+  "AddressBook",
+  "AdminUser",
+  "BulkShipment",
+  "Buzzie",
+  "Conversation",
+  "Country",
+  "Distributor",
+  "ExternalOrder",
+  "Integration",
+  "Label",
+  "Matrix",
+  "Me",
+  "Message",
+  "PickupRequest",
+  "RateRequest",
+  "Relation",
+  "ScanInbound",
+  "Service",
+  "Shipment",
+  "SurchargeSet",
+  "TrackAndTrace",
+  "Tracking",
+  "Transport",
+  "Type",
+  "User",
+  "Webhook",
+  "Widget",
+]
+`;
