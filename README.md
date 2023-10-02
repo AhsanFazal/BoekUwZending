@@ -22,7 +22,7 @@ yarn add @boekuwzending/api
 ### Creating a client
 
 ```typescript
-import { BoekUwZendingClient } from "@boekuwzending/api"
+import { BoekUwZendingClient } from "boekuwzending-api"
 
 const client = new BoekUwZendingClient({
   clientId: "[CLIENT_ID]",
@@ -34,7 +34,7 @@ const client = new BoekUwZendingClient({
 ### Getting all orders
 
 ```typescript
-import { BoekUwZendingClient } from "@boekuwzending/api"
+import { BoekUwZendingClient } from "boekuwzending-api"
 
 const client = await BoekUwZendingClient.create({
   clientId: "[CLIENT_ID]",

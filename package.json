@@ -1,5 +1,5 @@
 {
-  "name": "@boekuwzending/api",
+  "name": "boekuwzending-api",
   "version": "1.0.0",
   "description": "An unofficial TypeScript implementation of the BoekUwZending PHP SDK",
   "main": "dist/index.js",
