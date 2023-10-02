@@ -10,18 +10,20 @@ export declare enum URLs {
     production = "https://api.boekuwzending.com",
     staging = "https://staging.api.boekuwzending.com"
 }
+export declare const productionURL = URLs.production;
+export declare const stagingURL = URLs.staging;
 type EndpointTypes = typeof endpoints;
 type EndpointClassInstances = {
     [K in keyof EndpointTypes]: InstanceType<EndpointTypes[K]>;
 };
-type LowerCaseEndpointInstances = {
+type EndpointInstances = {
     [K in Extract<keyof EndpointClassInstances, string> as `${K extends `${infer First}${infer Rest}` ? Lowercase<First> : ""}${K extends `${infer First}${infer Rest}` ? Rest : ""}`]: EndpointClassInstances[K];
 };
 export default class BoekUwZendingClient {
     private baseClient;
     private accessToken?;
     baseURL: string;
-    endpoints: LowerCaseEndpointInstances;
+    endpoints: EndpointInstances;
     constructor(config: ClientConfig);
     private initializeEndpoints;
     static create(config: ClientConfig): Promise<BoekUwZendingClient>;

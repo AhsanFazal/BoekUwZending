@@ -35,7 +35,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.URLs = void 0;
+exports.stagingURL = exports.productionURL = exports.URLs = void 0;
 const openapi_fetch_1 = __importDefault(require("openapi-fetch"));
 const endpoints = __importStar(require("./endpoints"));
 var URLs;
@@ -43,12 +43,14 @@ var URLs;
     URLs["production"] = "https://api.boekuwzending.com";
     URLs["staging"] = "https://staging.api.boekuwzending.com";
 })(URLs || (exports.URLs = URLs = {}));
+exports.productionURL = URLs.production;
+exports.stagingURL = URLs.staging;
 class BoekUwZendingClient {
     constructor(config) {
         // Private properties
         this.baseClient = (0, openapi_fetch_1.default)();
-        this.baseURL = config.mode || URLs.production;
         this.endpoints = {};
+        this.baseURL = config.mode === "production" ? exports.productionURL : exports.stagingURL;
         this.initializeEndpoints();
     }
     initializeEndpoints() {
