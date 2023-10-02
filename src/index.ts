@@ -20,7 +20,7 @@ type EndpointClassInstances = {
   [K in keyof EndpointTypes]: InstanceType<EndpointTypes[K]>
 }
 
-type LowerCaseEndpointInstances = {
+type EndpointInstances = {
   [K in Extract<
     keyof EndpointClassInstances,
     string
@@ -46,10 +46,11 @@ export default class BoekUwZendingClient {
 
   // Public properties
   public baseURL: string
-  public endpoints: LowerCaseEndpointInstances
+  public endpoints: EndpointInstances
 
   constructor(config: ClientConfig) {
-    this.baseURL = config.mode || URLs.production
+    console.log(config)
+    this.baseURL = config.mode === "production" ? productionURL : stagingURL
     this.endpoints = {} as any
     this.initializeEndpoints()
   }
@@ -59,7 +60,7 @@ export default class BoekUwZendingClient {
       if (Object.prototype.hasOwnProperty.call(endpoints, key)) {
         const endpointKey = key as keyof EndpointClassInstances
         const lowerCaseKey = (endpointKey.charAt(0).toLowerCase() +
-          endpointKey.slice(1)) as keyof LowerCaseEndpointInstances
+          endpointKey.slice(1)) as keyof EndpointInstances
         // Bypass TypeScript type checking by asserting as 'any'
         ;(this.endpoints as any)[lowerCaseKey] = new endpoints[endpointKey](
           this.httpClient
@@ -67,7 +68,7 @@ export default class BoekUwZendingClient {
       }
     }
     // Restore type safety by asserting back to EndpointInstances
-    this.endpoints = this.endpoints as LowerCaseEndpointInstances
+    this.endpoints = this.endpoints as EndpointInstances
   }
 
   public static async create(
