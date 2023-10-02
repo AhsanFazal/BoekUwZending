@@ -1,23 +1,5 @@
 import createClient from "openapi-fetch"
-import {
-  MeEndpoint,
-  ExternalOrderEndpoint,
-  TransportEndpoint,
-  UserEndpoint,
-  AddressBookEndpoint,
-  AdminUserEndpoint,
-  BulkShipmentEndpoint,
-  BuzzieEndpoint,
-  ConversationEndpoint,
-  CountryEndpoint,
-  DistributorEndpoint,
-  IntegrationEndpoint,
-  LabelEndpoint,
-  MatrixEndpoint,
-  MessageEndpoint,
-  PickupRequestEndpoint,
-  RateRequestEndpoint
-} from "./endpoints"
+import * as endpoints from "./endpoints"
 import { paths } from "./lib/api"
 
 interface ClientConfig {
@@ -47,46 +29,47 @@ export default class BoekUwZendingClient {
   private accessToken?: string
 
   // Public Endpoint Handlers
-  public me!: MeEndpoint
-  public externalOrders!: ExternalOrderEndpoint
-  public transport!: TransportEndpoint
-  public user!: UserEndpoint
-  public addressBook!: AddressBookEndpoint
-  public adminUser!: AdminUserEndpoint
-  public bulkShipment!: BulkShipmentEndpoint
-  public buzzie!: BuzzieEndpoint
-  public conversation!: ConversationEndpoint
-  public country!: CountryEndpoint
-  public distributor!: DistributorEndpoint
-  public integration!: IntegrationEndpoint
-  public label!: LabelEndpoint
-  public matrix!: MatrixEndpoint
-  public message!: MessageEndpoint
-  public pickupRequest!: PickupRequestEndpoint
-  public rateRequest!: RateRequestEndpoint
+  public me!: endpoints.Me
+  public externalOrders!: endpoints.ExternalOrder
+  public transport!: endpoints.Transport
+  public user!: endpoints.User
+  public addressBook!: endpoints.AddressBook
+  public adminUser!: endpoints.AdminUser
+  public bulkShipment!: endpoints.BulkShipment
+  public buzzie!: endpoints.Buzzie
+  public conversation!: endpoints.Conversation
+  public country!: endpoints.Country
+  public distributor!: endpoints.Distributor
+  public integration!: endpoints.Integration
+  public label!: endpoints.Label
+  public matrix!: endpoints.Matrix
+  public message!: endpoints.Message
+  public pickupRequest!: endpoints.PickupRequest
+  public rateRequest!: endpoints.RateRequest
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
+    this.initializeEndpoints()
   }
 
-  private registerEndpoints(): void {
-    this.me = new MeEndpoint(this.httpClient)
-    this.externalOrders = new ExternalOrderEndpoint(this.httpClient)
-    this.transport = new TransportEndpoint(this.httpClient)
-    this.user = new UserEndpoint(this.httpClient)
-    this.addressBook = new AddressBookEndpoint(this.httpClient)
-    this.adminUser = new AdminUserEndpoint(this.httpClient)
-    this.bulkShipment = new BulkShipmentEndpoint(this.httpClient)
-    this.buzzie = new BuzzieEndpoint(this.httpClient)
-    this.conversation = new ConversationEndpoint(this.httpClient)
-    this.country = new CountryEndpoint(this.httpClient)
-    this.distributor = new DistributorEndpoint(this.httpClient)
-    this.integration = new IntegrationEndpoint(this.httpClient)
-    this.label = new LabelEndpoint(this.httpClient)
-    this.matrix = new MatrixEndpoint(this.httpClient)
-    this.message = new MessageEndpoint(this.httpClient)
-    this.pickupRequest = new PickupRequestEndpoint(this.httpClient)
-    this.rateRequest = new RateRequestEndpoint(this.httpClient)
+  private initializeEndpoints(): void {
+    this.me = new endpoints.Me(this.httpClient)
+    this.externalOrders = new endpoints.ExternalOrder(this.httpClient)
+    this.transport = new endpoints.Transport(this.httpClient)
+    this.user = new endpoints.User(this.httpClient)
+    this.addressBook = new endpoints.AddressBook(this.httpClient)
+    this.adminUser = new endpoints.AdminUser(this.httpClient)
+    this.bulkShipment = new endpoints.BulkShipment(this.httpClient)
+    this.buzzie = new endpoints.Buzzie(this.httpClient)
+    this.conversation = new endpoints.Conversation(this.httpClient)
+    this.country = new endpoints.Country(this.httpClient)
+    this.distributor = new endpoints.Distributor(this.httpClient)
+    this.integration = new endpoints.Integration(this.httpClient)
+    this.label = new endpoints.Label(this.httpClient)
+    this.matrix = new endpoints.Matrix(this.httpClient)
+    this.message = new endpoints.Message(this.httpClient)
+    this.pickupRequest = new endpoints.PickupRequest(this.httpClient)
+    this.rateRequest = new endpoints.RateRequest(this.httpClient)
   }
 
   public static async create(
@@ -94,7 +77,6 @@ export default class BoekUwZendingClient {
   ): Promise<BoekUwZendingClient> {
     const client = new BoekUwZendingClient(config)
     await client.authorize(config)
-    client.registerEndpoints()
     return client
   }
 
