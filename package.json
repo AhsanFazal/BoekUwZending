@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AhsanFazal/BoekUwZending-SDK.git"
+    "url": "git+https://github.com/AhsanFazal/BoekUwZending.git"
   },
   "author": "Ahsan Fazal me@ahsanfazal.com",
   "license": "AGPL",
   "bugs": {
-    "url": "https://github.com/AhsanFazal/BoekUwZending-SDK/issues"
+    "url": "https://github.com/AhsanFazal/BoekUwZending/issues"
   },
-  "homepage": "https://github.com/AhsanFazal/BoekUwZending-SDK#readme",
+  "homepage": "https://github.com/AhsanFazal/BoekUwZending#readme",
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
