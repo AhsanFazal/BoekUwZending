@@ -1,7 +1,7 @@
 import { operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class CountryEndpoint extends BaseEndpoint {
+export class Country extends BaseEndpoint {
   public async get(
     query: operations["getCountryCollection"]["parameters"]["query"]
   ) {

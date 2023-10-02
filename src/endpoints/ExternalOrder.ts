@@ -3,7 +3,7 @@ import { BaseEndpoint } from "./Base"
 
 type WriteSchema = components["schemas"]["ExternalOrder-order-write"]
 
-export class ExternalOrderEndpoint extends BaseEndpoint {
+export class ExternalOrder extends BaseEndpoint {
   public async get(query: paths["/orders"]["get"]["parameters"]["query"]) {
     return this.httpClient.GET("/orders", { params: { query } })
   }

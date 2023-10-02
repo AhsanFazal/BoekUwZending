@@ -1,7 +1,7 @@
 import { operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class BulkShipmentEndpoint extends BaseEndpoint {
+export class BulkShipment extends BaseEndpoint {
   public async get(
     query: operations["getBulkShipmentCollection"]["parameters"]["query"]
   ) {

@@ -1,7 +1,7 @@
 import { operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class AddressBookEndpoint extends BaseEndpoint {
+export class AddressBook extends BaseEndpoint {
   public async get(
     query: operations["getAddressBookItemsCollection"]["parameters"]["query"]
   ) {

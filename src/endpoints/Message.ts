@@ -1,7 +1,7 @@
 import { components, operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class MessageEndpoint extends BaseEndpoint {
+export class Message extends BaseEndpoint {
   public async create(body: components["schemas"]["Message-message-write"]) {
     return this.httpClient.POST("/messages", { body })
   }

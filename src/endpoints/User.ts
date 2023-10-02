@@ -1,7 +1,7 @@
 import { components, operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class UserEndpoint extends BaseEndpoint {
+export class User extends BaseEndpoint {
   public async get(
     query: operations["getUserCollection"]["parameters"]["query"]
   ) {

@@ -1,7 +1,7 @@
 import { operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
-export class MatrixEndpoint extends BaseEndpoint {
+export class Matrix extends BaseEndpoint {
   public async getMatrices(
     query: operations["getMatrixCollection"]["parameters"]["query"]
   ) {
