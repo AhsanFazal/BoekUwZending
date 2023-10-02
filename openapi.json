@@ -7,11 +7,11 @@
   },
   "servers": [
     {
-      "url": "https://api.boekuwzending.com/",
+      "url": "https://api.boekuwzending.com",
       "description": "Production server"
     },
     {
-      "url": "https://staging.api.boekuwzending.com/",
+      "url": "https://staging.api.boekuwzending.com",
       "description": "Staging server"
     }
   ],
