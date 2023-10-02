@@ -32,6 +32,14 @@ enum URLs {
   staging = "https://staging.api.boekuwzending.com"
 }
 
+interface OAuthResponse {
+  access_token?: string
+  token_type?: string
+  expires_in?: number
+  error?: string
+  error_description?: string
+}
+
 export default class BoekUwZendingClient {
   // Private properties
   private baseClient = createClient<paths>()
