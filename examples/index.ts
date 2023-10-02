@@ -1,8 +1,10 @@
-import BoekUwZendingClient from "../src"
+import BoekUwZendingClient, { ClientConfig } from "../src"
 
-const clientId = process.env.CLIENT_ID || ""
-const clientSecret = process.env.CLIENT_SECRET || ""
-const config = { clientId, clientSecret }
+const config: ClientConfig = {
+  clientId: process.env.CLIENT_ID || "",
+  clientSecret: process.env.CLIENT_SECRET || "",
+  mode: "staging"
+}
 
 /**
  * This example shows how to get authenticated user information.
@@ -11,7 +13,7 @@ async function getMe() {
   const client = await BoekUwZendingClient.create(config)
 
   try {
-    const { data, error: _ } = await client.me.get()
+    const { data, error: _ } = await client.endpoints.me.get()
     return data
     /**
      * {
@@ -34,13 +36,13 @@ async function getMe() {
  */
 async function getConversation() {
   const client = await BoekUwZendingClient.create(config)
-  const { data: me, error: _ } = await client.me.get()
+  const { data: me, error: _ } = await client.endpoints.me.get()
   if (!me?.conversation) {
     throw new Error("Conversation path not found")
   }
 
   try {
-    const { data, error: _ } = await client.conversation.getById(
+    const { data, error: _ } = await client.endpoints.conversation.getById(
       me.conversation.split("/").pop() as string
     )
     return data
