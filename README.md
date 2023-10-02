@@ -19,7 +19,7 @@ yarn add boekuwzending
 
 ## Usage
 
-#### Creating a client
+### Creating a client
 
 ```typescript
 import { BoekUwZending } from 'boekuwzending-sdk'
@@ -50,15 +50,13 @@ const { data, error } = await client.externalOrders.get({
 
 ## API Implementation Status
 
-### ✅ Implemented
-
-#### Current User
+### Current User
 
 | Endpoint | GET | POST | PUT | DELETE |
 | -------- | --- | ---- | --- | ------ |
 | **/me**  | ✅   | -    | -   | -      |
 
-#### Orders
+### Orders
 
 | Endpoint         | GET | POST | PUT | DELETE |
 | ---------------- | --- | ---- | --- | ------ |
@@ -66,14 +64,14 @@ const { data, error } = await client.externalOrders.get({
 | **/orders/{id}** | ✅   | -    | ✅   | ✅      |
 
 
-#### Users
+### Users
 
 | Endpoint        | GET | POST | PUT | DELETE |
 | --------------- | --- | ---- | --- | ------ |
 | **/users**      | ✅   | ✅    | -   | -      |
 | **/users/{id}** | ✅   | -    | -   | -      |
 
-#### Admin Users
+### Admin Users
 
 | Endpoint              | GET | POST | PUT | DELETE |
 | --------------------- | --- | ---- | --- | ------ |
@@ -81,14 +79,14 @@ const { data, error } = await client.externalOrders.get({
 | **/admin_users/{id}** | ✅   | -    | -   | -      |
 
 
-#### Address Book
+### Address Book
 
 | Endpoint                     | GET | POST | PUT | DELETE |
 | ---------------------------- | --- | ---- | --- | ------ |
 | **/address_book_items**      | ✅   | -    | -   | -      |
 | **/address_book_items/{id}** | ✅   | -    | -   | -      |
 
-#### Bulk Shipments
+### Bulk Shipments
 
 | Endpoint                 | GET | POST | PUT | DELETE |
 | ------------------------ | --- | ---- | --- | ------ |
@@ -96,14 +94,14 @@ const { data, error } = await client.externalOrders.get({
 | **/bulk_shipments/{id}** | ✅   | -    | -   | -      |
 
 
-#### Buzzie
+### Buzzie
 
 | Endpoint              | GET | POST | PUT | DELETE |
 | --------------------- | --- | ---- | --- | ------ |
 | **/buzzie/postcodes** | ✅   | -    | -   | -      |
 
 
-#### Conversations
+### Conversations
 
 | Endpoint                         | GET | POST | PUT | DELETE |
 | -------------------------------- | --- | ---- | --- | ------ |
@@ -111,14 +109,14 @@ const { data, error } = await client.externalOrders.get({
 | **/conversations/{id}**          | ✅   | -    | -   | -      |
 | **/conversations/{id}/messages** | ✅   | -    | -   | -      |
 
-#### Countries
+### Countries
 
 | Endpoint            | GET | POST | PUT | DELETE |
 | ------------------- | --- | ---- | --- | ------ |
 | **/countries**      | ✅   | -    | -   | -      |
 | **/countries/{id}** | ✅   | -    | -   | -      |
 
-#### Distributors
+### Distributors
 
 | Endpoint               | GET | POST | PUT | DELETE |
 | ---------------------- | --- | ---- | --- | ------ |
@@ -126,7 +124,7 @@ const { data, error } = await client.externalOrders.get({
 | **/distributors/{id}** | ✅   | -    | -   | -      |
 
 
-#### Integrations
+### Integrations
 
 | Endpoint                       | GET | POST | PUT | DELETE |
 | ------------------------------ | --- | ---- | --- | ------ |
@@ -135,13 +133,13 @@ const { data, error } = await client.externalOrders.get({
 | **/integrations/shopify/{id}** | ✅   | -    | -   | -      |
 | **/integrations/{id}**         | ✅   | -    | -   | -      |
 
-#### Labels
+### Labels
 
 | Endpoint         | GET | POST | PUT | DELETE |
 | ---------------- | --- | ---- | --- | ------ |
 | **/labels/{id}** | ✅   | -    | -   | -      |
 
-#### Matrix
+### Matrix
 
 | Endpoint                   | GET | POST | PUT | DELETE |
 | -------------------------- | --- | ---- | --- | ------ |
@@ -154,7 +152,7 @@ const { data, error } = await client.externalOrders.get({
 | **/matrix_rates**          | ✅   | -    | -   | -      |
 | **/matrix_rates/{id}**     | ✅   | -    | -   | -      |
 
-#### Messages
+### Messages
 
 | Endpoint           | GET | POST | PUT | DELETE |
 | ------------------ | --- | ---- | --- | ------ |
@@ -162,115 +160,110 @@ const { data, error } = await client.externalOrders.get({
 | **/messages/{id}** | ✅   | -    | ✅   | -      |
 
 
-#### Pickup Requests
+### Pickup Requests
 
 | Endpoint                  | GET | POST | PUT | DELETE | PATCH |
 | ------------------------- | --- | ---- | --- | ------ | ----- |
 | **/pickup_requests**      | ✅   | ✅    | -   | -      | -     |
 | **/pickup_requests/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
 
-#### Rate Requests
+### Rate Requests
 
 | Endpoint          | GET | POST | PUT | DELETE | PATCH |
 | ----------------- | --- | ---- | --- | ------ | ----- |
 | **/rate-request** | -   | ✅    | -   | -      | -     |
 
 
-#### Transport
-
-| Endpoint                    | GET | POST | PUT | DELETE | PATCH |
-| --------------------------- | --- | ---- | --- | ------ | ----- |
-| **/transport/depots**       | ✅   | ✅    | -   | -      | -     |
-| **/transport/depots/{id}**  | ✅   | -    | ✅   | -      | ✅     |
-| **/transport/drivers**      | ✅   | ✅    | -   | -      | -     |
-| **/transport/drivers/{id}** | ✅   | -    | ✅   | ✅      | ✅     |
-
-### ❌ Not Implemented Yet
-
-#### Relations
+### Relations
 
 | Endpoint            | GET | POST | PUT | DELETE |
 | ------------------- | --- | ---- | --- | ------ |
-| **/relations**      | ❌   | -    | -   | -      |
-| **/relations/{id}** | ❌   | -    | -   | -      |
+| **/relations**      | ✅   | -    | -   | -      |
+| **/relations/{id}** | ✅   | -    | -   | -      |
 
-#### Scan Inbounds
+
+### Scan Inbounds
 
 | Endpoint                  | GET | POST | PUT | DELETE |
 | ------------------------- | --- | ---- | --- | ------ |
-| **/scan_inbounds**        | -   | ❌    | -   | -      |
-| **/scan_inbounds/{uuid}** | ❌   | -    | -   | -      |
+| **/scan_inbounds**        | -   | ✅    | -   | -      |
+| **/scan_inbounds/{uuid}** | ✅   | -    | -   | -      |
 
-#### Services
+### Services
 
 | Endpoint           | GET | POST | PUT | DELETE |
 | ------------------ | --- | ---- | --- | ------ |
-| **/services**      | -   | ❌    | -   | -      |
-| **/services/{id}** | ❌   | -    | -   | -      |
+| **/services**      | -   | ✅    | -   | -      |
+| **/services/{id}** | ✅   | -    | -   | -      |
 
-#### Shipments
+
+### Shipments
 
 | Endpoint                      | GET | POST | PUT | DELETE |
 | ----------------------------- | --- | ---- | --- | ------ |
-| **/shipment_quotations**      | ❌   | -    | -   | -      |
-| **/shipment_quotations/{id}** | ❌   | -    | -   | -      |
-| **/shipments**                | ❌   | ❌    | -   | -      |
-| **/shipments/items/{id}**     | ❌   | -    | -   | -      |
-| **/shipments/{id}**           | ❌   | -    | -   | -      |
-| **/shipments/{id}/labels**    | ❌   | -    | -   | -      |
+| **/shipment_quotations**      | ✅   | -    | -   | -      |
+| **/shipment_quotations/{id}** | ✅   | -    | -   | -      |
+| **/shipments**                | ✅   | ✅    | -   | -      |
+| **/shipments/items/{id}**     | ✅   | -    | -   | -      |
+| **/shipments/{id}**           | ✅   | -    | -   | -      |
+| **/shipments/{id}/labels**    | ✅   | -    | -   | -      |
 
-
-
-#### Surcharge Sets
+### Surcharge Sets
 
 | Endpoint                 | GET | POST | PUT | DELETE | PATCH |
 | ------------------------ | --- | ---- | --- | ------ | ----- |
-| **/surcharge_sets/{id}** | ❌   | -    | -   | -      | -     |
+| **/surcharge_sets/{id}** | ✅   | -    | -   | -      | -     |
 
-#### Tracking
+### Track & Trace
 
 | Endpoint                  | GET | POST | PUT | DELETE | PATCH |
 | ------------------------- | --- | ---- | --- | ------ | ----- |
-| **/track-and-trace/{id}** | ❌   | -    | -   | -      | -     |
-| **/trackings**            | ❌   | -    | -   | -      | -     |
-| **/trackings/{id}**       | ❌   | -    | -   | -      | -     |
+| **/track-and-trace/{id}** | ✅   | -    | -   | -      | -     |
 
-#### Types
+### Tracking
+
+| Endpoint            | GET | POST | PUT | DELETE | PATCH |
+| ------------------- | --- | ---- | --- | ------ | ----- |
+| **/trackings**      | ✅   | -    | -   | -      | -     |
+| **/trackings/{id}** | ✅   | -    | -   | -      | -     |
+
+### Types
 
 | Endpoint        | GET | POST | PUT | DELETE | PATCH |
 | --------------- | --- | ---- | --- | ------ | ----- |
-| **/types**      | ❌   | -    | -   | -      | -     |
-| **/types/{id}** | ❌   | -    | -   | -      | -     |
+| **/types**      | ✅   | -    | -   | -      | -     |
+| **/types/{id}** | ✅   | -    | -   | -      | -     |
 
-#### Webhooks
+### Webhooks
 
 | Endpoint           | GET | POST | PUT | DELETE | PATCH |
 | ------------------ | --- | ---- | --- | ------ | ----- |
-| **/webhooks**      | ❌   | ❌    | -   | -      | -     |
-| **/webhooks/{id}** | ❌   | -    | -   | -      | -     |
+| **/webhooks**      | ✅   | ✅    | -   | -      | -     |
+| **/webhooks/{id}** | ✅   | -    | -   | -      | -     |
 
-#### Widgets
+### Widgets
 
 | Endpoint          | GET | POST | PUT | DELETE | PATCH |
 | ----------------- | --- | ---- | --- | ------ | ----- |
-| **/widgets**      | ❌   | -    | -   | -      | -     |
-| **/widgets/{id}** | ❌   | -    | -   | -      | -     |
+| **/widgets**      | ✅   | -    | -   | -      | -     |
+| **/widgets/{id}** | ✅   | -    | -   | -      | -     |
 
-
-
-#### Transport
-
+### Transport
 
 | Endpoint                                                        | GET | POST | PUT | DELETE | PATCH |
 | --------------------------------------------------------------- | --- | ---- | --- | ------ | ----- |
-| **/transport/excluded_pickups**                                 | ❌   | ❌    | -   | -      | -     |
-| **/transport/excluded_pickups/{id}**                            | ❌   | -    | ❌   | -      | ❌     |
-| **/transport/pickup_requests**                                  | ❌   | ❌    | -   | -      | -     |
-| **/transport/pickup_requests/{id}**                             | ❌   | -    | ❌   | ❌      | ❌     |
-| **/transport/pickup_schedules**                                 | ❌   | ❌    | -   | -      | -     |
-| **/transport/pickup_schedules/{id}**                            | ❌   | -    | ❌   | -      | ❌     |
-| **/transport/pickups**                                          | ❌   | -    | -   | -      | -     |
-| **/transport/pickups/{id}**                                     | ❌   | -    | -   | -      | -     |
+| **/transport/depots**                                           | ✅   | ✅    | -   | -      | -     |
+| **/transport/depots/{id}**                                      | ✅   | -    | ✅   | -      | ✅     |
+| **/transport/drivers**                                          | ✅   | ✅    | -   | -      | -     |
+| **/transport/drivers/{id}**                                     | ✅   | -    | ✅   | ✅      | ✅     |
+| **/transport/excluded_pickups**                                 | ✅   | ✅    | -   | -      | -     |
+| **/transport/excluded_pickups/{id}**                            | ✅   | -    | ✅   | -      | ✅     |
+| **/transport/pickup_requests**                                  | ✅   | ✅    | -   | -      | -     |
+| **/transport/pickup_requests/{id}**                             | ✅   | -    | ✅   | ✅      | ✅     |
+| **/transport/pickup_schedules**                                 | ✅   | ✅    | -   | -      | -     |
+| **/transport/pickup_schedules/{id}**                            | ✅   | -    | ✅   | -      | ✅     |
+| **/transport/pickups**                                          | ✅   | -    | -   | -      | -     |
+| **/transport/pickups/{id}**                                     | ✅   | -    | -   | -      | -     |
 | **/transport/positions**                                        | ❌   | ❌    | -   | -      | -     |
 | **/transport/positions/{id}**                                   | ❌   | -    | -   | -      | -     |
 | **/transport/postcodes**                                        | ❌   | ❌    | -   | -      | -     |
