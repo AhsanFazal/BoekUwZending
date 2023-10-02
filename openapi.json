@@ -19963,15 +19963,6 @@
           }
         }
       },
-      "ShipmentSequence-ScanInbound.Read": {
-        "type": "object",
-        "properties": {
-          "number": {
-            "type": "integer",
-            "readOnly": true
-          }
-        }
-      },
       "ShipmentSurchargeSet": {
         "type": "object",
         "properties": {
