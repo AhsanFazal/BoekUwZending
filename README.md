@@ -22,26 +22,26 @@ yarn add boekuwzending
 ### Creating a client
 
 ```typescript
-import { BoekUwZending } from 'boekuwzending-sdk'
+import { BoekUwZendingClient } from 'boekuwzending'
 
-const client = new ApiClient({
-  clientId: 'yourClientId',
-  clientSecret: 'yourClientSecret',
-  mode: 'production' // or 'staging' (optional)
+const client = new BoekUwZendingClient({
+  clientId: "[CLIENT_ID]",
+  clientSecret: "[CLIENT_SECRET]"
+  mode: "production" // or 'staging' (optional)
 })
 ```
 
 ### Getting all orders
 
 ```typescript
-import BoekUwZendingClient from "../src"
+import { BoekUwZendingClient } from 'boekuwzending'
 
 const client = await BoekUwZendingClient.create({
   clientId: "[CLIENT_ID]",
   clientSecret: "[CLIENT_SECRET]"
 })
 
-const { data, error } = await client.externalOrders.get({
+const { data: externalOrders, error: _ } = await client.endpoints.externalOrders.get({
   _items_per_page: 10,
   _page: 1
 })
