@@ -112,8 +112,6 @@ export default class BoekUwZendingClient {
     })
   }
 
-    const method = "POST"
-    const url = "/token"
   public async authorize(config: ClientConfig): Promise<void> {
     const data = {
       client_id: config.clientId,
@@ -121,21 +119,38 @@ export default class BoekUwZendingClient {
       grant_type: "client_credentials",
       scopes: config.authorizationScopes?.join(" ") || ""
     }
-    const headers = { "Content-Type": "application/x-www-form-urlencoded" }
 
     try {
-      const response = await fetch(`${this.baseURL}${url}`, {
-        method,
-        headers,
+      const response = await fetch(`${this.baseURL}/token`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(data)
       })
-      if (!response.ok) throw new Error("Authorization failed")
-      const json = await response.json()
-      if (!json.access_token || !json.expires_in)
-        throw new Error("Authorization failed")
+
+      const json: OAuthResponse = await response.json()
+
+      if (!response.ok) {
+        if (json.error)
+          throw new Error(
+            `OAuth Error: ${json.error}, ${json.error_description}`
+          )
+        throw new Error(
+          `OAuth Error: ${response.status}, ${response.statusText}`
+        )
+      }
+
+      if (
+        !json.access_token ||
+        !json.expires_in ||
+        json.token_type !== "Bearer"
+      ) {
+        throw new Error(`Invalid response: ${JSON.stringify(json)}`)
+      }
+
       this.accessToken = json.access_token
     } catch (error: any) {
-      throw new Error(error)
+      console.error("Authorization failed:", error.message)
+      throw new Error(error) // Propagate error up the stack
     }
   }
 }
