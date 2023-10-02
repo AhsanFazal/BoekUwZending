@@ -30,6 +30,6 @@ describe("BoekUwZendingClient", () => {
   })
 
   it("should select the correct base URL", () => {
-    expect(client.baseURL).toEqual("https://api.staging.boekuwzending.com")
+    expect(client.baseURL).toEqual("https://staging.api.boekuwzending.com")
   })
 })
