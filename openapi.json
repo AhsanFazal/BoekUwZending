@@ -17,7 +17,7 @@
   ],
   "security": [
     {
-      "oauth": []
+      "OAuth2": ["read", "write"]
     }
   ],
   "paths": {
@@ -22986,12 +22986,12 @@
       }
     },
     "securitySchemes": {
-      "oauth": {
+      "OAuth2": {
         "type": "oauth2",
         "description": "OAuth 2.0 application Grant",
         "flows": {
           "clientCredentials": {
-            "tokenUrl": "/token",
+            "tokenUrl": "https://api.boekuwzending.com/token",
             "scopes": {}
           }
         }
