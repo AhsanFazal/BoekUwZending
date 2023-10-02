@@ -1,6 +1,6 @@
-# BoekUwZending TypeScript SDK
+# BoekUwZending TypeScript API Client
 
-Unofficial TypeScript SDK for the [BoekUwZending API](https://api.boekuwzending.com/docs/).
+Unofficial TypeScript API client for the [BoekUwZending API](https://api.boekuwzending.com/docs/).
 
 ## Installation
 
@@ -8,13 +8,13 @@ Unofficial TypeScript SDK for the [BoekUwZending API](https://api.boekuwzending.
 ### npm
 
 ```bash
-npm install boekuwzending
+npm install @boekuwzending/api
 ```
 
 ### yarn
 
 ```bash
-yarn add boekuwzending
+yarn add @boekuwzending/api
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ yarn add boekuwzending
 ### Creating a client
 
 ```typescript
-import { BoekUwZendingClient } from 'boekuwzending'
+import { BoekUwZendingClient } from "@boekuwzending/api"
 
 const client = new BoekUwZendingClient({
   clientId: "[CLIENT_ID]",
@@ -34,7 +34,7 @@ const client = new BoekUwZendingClient({
 ### Getting all orders
 
 ```typescript
-import { BoekUwZendingClient } from 'boekuwzending'
+import { BoekUwZendingClient } from "@boekuwzending/api"
 
 const client = await BoekUwZendingClient.create({
   clientId: "[CLIENT_ID]",
