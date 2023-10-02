@@ -13,9 +13,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const src_1 = __importDefault(require("../src"));
-const clientId = process.env.CLIENT_ID || "";
-const clientSecret = process.env.CLIENT_SECRET || "";
-const config = { clientId, clientSecret };
+const config = {
+    clientId: process.env.CLIENT_ID || "",
+    clientSecret: process.env.CLIENT_SECRET || "",
+    mode: "staging"
+};
 /**
  * This example shows how to get authenticated user information.
  */
@@ -23,7 +25,7 @@ function getMe() {
     return __awaiter(this, void 0, void 0, function* () {
         const client = yield src_1.default.create(config);
         try {
-            const { data, error: _ } = yield client.me.get();
+            const { data, error: _ } = yield client.endpoints.me.get();
             return data;
             /**
              * {
@@ -48,12 +50,12 @@ function getMe() {
 function getConversation() {
     return __awaiter(this, void 0, void 0, function* () {
         const client = yield src_1.default.create(config);
-        const { data: me, error: _ } = yield client.me.get();
+        const { data: me, error: _ } = yield client.endpoints.me.get();
         if (!(me === null || me === void 0 ? void 0 : me.conversation)) {
             throw new Error("Conversation path not found");
         }
         try {
-            const { data, error: _ } = yield client.conversation.getById(me.conversation.split("/").pop());
+            const { data, error: _ } = yield client.endpoints.conversation.getById(me.conversation.split("/").pop());
             return data;
             /**
              * {

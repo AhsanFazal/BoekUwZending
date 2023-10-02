@@ -9,25 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Positions = void 0;
-const Base_1 = require("../../Base");
-class Positions extends Base_1.BaseEndpoint {
-    get(query) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.httpClient.GET("/transport/positions", { params: { query } });
-        });
-    }
-    create(body) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.httpClient.POST("/transport/positions", { body });
-        });
-    }
+exports.SurchargeSet = void 0;
+const Base_1 = require("./Base");
+class SurchargeSet extends Base_1.BaseEndpoint {
     getById(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpClient.GET(`/transport/positions/{id}`, {
+            return this.httpClient.GET(`/surcharge_sets/{id}`, {
                 params: { path: { id } }
             });
         });
     }
 }
-exports.Positions = Positions;
+exports.SurchargeSet = SurchargeSet;

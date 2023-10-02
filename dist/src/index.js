@@ -35,38 +35,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.URLs = void 0;
 const openapi_fetch_1 = __importDefault(require("openapi-fetch"));
 const endpoints = __importStar(require("./endpoints"));
 var URLs;
 (function (URLs) {
     URLs["production"] = "https://api.boekuwzending.com";
     URLs["staging"] = "https://staging.api.boekuwzending.com";
-})(URLs || (URLs = {}));
+})(URLs || (exports.URLs = URLs = {}));
 class BoekUwZendingClient {
     constructor(config) {
         // Private properties
         this.baseClient = (0, openapi_fetch_1.default)();
-        this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production;
+        this.baseURL = config.mode || URLs.production;
+        this.endpoints = {};
         this.initializeEndpoints();
     }
     initializeEndpoints() {
-        this.me = new endpoints.Me(this.httpClient);
-        this.externalOrders = new endpoints.ExternalOrder(this.httpClient);
-        this.transport = new endpoints.Transport(this.httpClient);
-        this.user = new endpoints.User(this.httpClient);
-        this.addressBook = new endpoints.AddressBook(this.httpClient);
-        this.adminUser = new endpoints.AdminUser(this.httpClient);
-        this.bulkShipment = new endpoints.BulkShipment(this.httpClient);
-        this.buzzie = new endpoints.Buzzie(this.httpClient);
-        this.conversation = new endpoints.Conversation(this.httpClient);
-        this.country = new endpoints.Country(this.httpClient);
-        this.distributor = new endpoints.Distributor(this.httpClient);
-        this.integration = new endpoints.Integration(this.httpClient);
-        this.label = new endpoints.Label(this.httpClient);
-        this.matrix = new endpoints.Matrix(this.httpClient);
-        this.message = new endpoints.Message(this.httpClient);
-        this.pickupRequest = new endpoints.PickupRequest(this.httpClient);
-        this.rateRequest = new endpoints.RateRequest(this.httpClient);
+        for (const key in endpoints) {
+            if (Object.prototype.hasOwnProperty.call(endpoints, key)) {
+                const endpointKey = key;
+                const lowerCaseKey = (endpointKey.charAt(0).toLowerCase() +
+                    endpointKey.slice(1));
+                this.endpoints[lowerCaseKey] = new endpoints[endpointKey](this.httpClient);
+            }
+        }
+        // Restore type safety by asserting back to EndpointInstances
+        this.endpoints = this.endpoints;
     }
     static create(config) {
         return __awaiter(this, void 0, void 0, function* () {

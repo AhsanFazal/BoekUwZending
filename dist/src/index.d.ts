@@ -1,32 +1,27 @@
 import * as endpoints from "./endpoints";
 import { paths } from "./lib/api";
-interface ClientConfig {
+export interface ClientConfig {
     clientId: string;
     clientSecret: string;
     mode?: "production" | "staging";
     authorizationScopes?: string[];
 }
+export declare enum URLs {
+    production = "https://api.boekuwzending.com",
+    staging = "https://staging.api.boekuwzending.com"
+}
+type EndpointTypes = typeof endpoints;
+type EndpointClassInstances = {
+    [K in keyof EndpointTypes]: InstanceType<EndpointTypes[K]>;
+};
+type LowerCaseEndpointInstances = {
+    [K in Extract<keyof EndpointClassInstances, string> as `${K extends `${infer First}${infer Rest}` ? Lowercase<First> : ""}${K extends `${infer First}${infer Rest}` ? Rest : ""}`]: EndpointClassInstances[K];
+};
 export default class BoekUwZendingClient {
     private baseClient;
-    private baseURL;
     private accessToken?;
-    me: endpoints.Me;
-    externalOrders: endpoints.ExternalOrder;
-    transport: endpoints.Transport;
-    user: endpoints.User;
-    addressBook: endpoints.AddressBook;
-    adminUser: endpoints.AdminUser;
-    bulkShipment: endpoints.BulkShipment;
-    buzzie: endpoints.Buzzie;
-    conversation: endpoints.Conversation;
-    country: endpoints.Country;
-    distributor: endpoints.Distributor;
-    integration: endpoints.Integration;
-    label: endpoints.Label;
-    matrix: endpoints.Matrix;
-    message: endpoints.Message;
-    pickupRequest: endpoints.PickupRequest;
-    rateRequest: endpoints.RateRequest;
+    baseURL: string;
+    endpoints: LowerCaseEndpointInstances;
     constructor(config: ClientConfig);
     private initializeEndpoints;
     static create(config: ClientConfig): Promise<BoekUwZendingClient>;
