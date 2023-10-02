@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkShipmentEndpoint = void 0;
+exports.BulkShipment = void 0;
 const Base_1 = require("./Base");
-class BulkShipmentEndpoint extends Base_1.BaseEndpoint {
+class BulkShipment extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/bulk_shipments", { params: { query } });
@@ -25,4 +25,4 @@ class BulkShipmentEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.BulkShipmentEndpoint = BulkShipmentEndpoint;
+exports.BulkShipment = BulkShipment;

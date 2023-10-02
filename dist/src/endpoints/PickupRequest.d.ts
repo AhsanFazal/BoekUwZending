@@ -1,7 +1,6 @@
-import { components, operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class PickupRequestEndpoint extends BaseEndpoint {
-    get(query: operations["getPickupRequestCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class PickupRequest extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _global_search?: string | undefined;
@@ -106,7 +105,7 @@ export declare class PickupRequestEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -158,7 +157,7 @@ export declare class PickupRequestEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    create(body: components["schemas"]["PickupRequest-pickup_request-collection-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    create(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {
@@ -293,7 +292,7 @@ export declare class PickupRequestEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    updateById(id: string, body: components["schemas"]["PickupRequest-pickup_request-collection-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    updateById(id: any, body: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -373,7 +372,7 @@ export declare class PickupRequestEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    deleteById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    deleteById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -388,7 +387,7 @@ export declare class PickupRequestEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    replaceById(id: string, body: components["schemas"]["PickupRequest-pickup_request-collection-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    replaceById(id: any, body: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

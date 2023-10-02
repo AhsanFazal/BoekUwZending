@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminUserEndpoint = void 0;
+exports.AdminUser = void 0;
 const Base_1 = require("./Base");
-class AdminUserEndpoint extends Base_1.BaseEndpoint {
+class AdminUser extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/admin_users", { params: { query } });
@@ -25,4 +25,4 @@ class AdminUserEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.AdminUserEndpoint = AdminUserEndpoint;
+exports.AdminUser = AdminUser;

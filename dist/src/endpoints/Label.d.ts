@@ -1,6 +1,6 @@
 import { BaseEndpoint } from "./Base";
-export declare class LabelEndpoint extends BaseEndpoint {
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Label extends BaseEndpoint {
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

@@ -1,7 +1,6 @@
-import { operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class MatrixEndpoint extends BaseEndpoint {
-    getMatrices(query: operations["getMatrixCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Matrix extends BaseEndpoint {
+    getMatrices(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -91,7 +90,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatricesById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getMatricesById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -182,7 +181,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixGroups(query: operations["getMatrixGroupCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixGroups(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -305,7 +304,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixGroupsById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixGroupsById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -429,7 +428,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixPostcodes(query: operations["getMatrixPostcodeCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixPostcodes(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -447,7 +446,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixPostcodesById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixPostcodesById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -466,7 +465,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixRates(query: operations["getMatrixRateCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixRates(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -484,7 +483,7 @@ export declare class MatrixEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMatrixRatesById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getMatrixRatesById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

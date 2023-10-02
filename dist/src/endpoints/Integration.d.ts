@@ -1,7 +1,6 @@
-import { components, operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class IntegrationEndpoint extends BaseEndpoint {
-    get(query: operations["getIntegrationCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Integration extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -34,7 +33,7 @@ export declare class IntegrationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    createShopifyIntegration(body: components["schemas"]["ShopifyServiceIntegration-integration-item-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    createShopifyIntegration(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {
@@ -88,7 +87,7 @@ export declare class IntegrationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getShopifyIntegrationById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getShopifyIntegrationById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -122,7 +121,7 @@ export declare class IntegrationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getIntegrationById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getIntegrationById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

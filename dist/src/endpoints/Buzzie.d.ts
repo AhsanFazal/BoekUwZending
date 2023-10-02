@@ -1,7 +1,6 @@
-import { operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class BuzzieEndpoint extends BaseEndpoint {
-    get(query: operations["buzzie-postcodesPostcodeCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Buzzie extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _global_search?: string | undefined;

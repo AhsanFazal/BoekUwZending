@@ -1,7 +1,6 @@
-import { components, operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class UserEndpoint extends BaseEndpoint {
-    get(query: operations["getUserCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class User extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -19,7 +18,7 @@ export declare class UserEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    create(body: components["schemas"]["User-user-collection-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    create(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": Record<string, never>;
@@ -46,7 +45,7 @@ export declare class UserEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

@@ -1,7 +1,6 @@
-import { components } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class MessageEndpoint extends BaseEndpoint {
-    create(body: components["schemas"]["Message-message-write"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Message extends BaseEndpoint {
+    create(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {
@@ -40,7 +39,7 @@ export declare class MessageEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -59,7 +58,7 @@ export declare class MessageEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    updateById(id: string, body: components["schemas"]["Message-message-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    updateById(id: any, body: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

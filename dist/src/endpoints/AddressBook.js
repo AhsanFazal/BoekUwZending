@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddressBookEndpoint = void 0;
+exports.AddressBook = void 0;
 const Base_1 = require("./Base");
-class AddressBookEndpoint extends Base_1.BaseEndpoint {
+class AddressBook extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/address_book_items", { params: { query } });
@@ -25,4 +25,4 @@ class AddressBookEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.AddressBookEndpoint = AddressBookEndpoint;
+exports.AddressBook = AddressBook;

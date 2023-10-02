@@ -1,8 +1,6 @@
-import { paths, components } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-type WriteSchema = components["schemas"]["ExternalOrder-order-write"];
-export declare class ExternalOrderEndpoint extends BaseEndpoint {
-    get(query: paths["/orders"]["get"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class ExternalOrder extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 externalId?: string | undefined;
@@ -40,7 +38,7 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    create(body: WriteSchema): Promise<import("openapi-fetch").FetchResponse<{
+    create(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {
@@ -307,7 +305,7 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -452,7 +450,7 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    updateById(id: string, body: WriteSchema): Promise<import("openapi-fetch").FetchResponse<{
+    updateById(id: any, body: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -724,7 +722,7 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    deleteById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    deleteById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -740,4 +738,3 @@ export declare class ExternalOrderEndpoint extends BaseEndpoint {
         };
     }>>;
 }
-export {};

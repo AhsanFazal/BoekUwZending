@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RateRequestEndpoint = void 0;
+exports.RateRequest = void 0;
 const Base_1 = require("./Base");
-class RateRequestEndpoint extends Base_1.BaseEndpoint {
+class RateRequest extends Base_1.BaseEndpoint {
     create(body) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.POST("/rate-request", { body });
         });
     }
 }
-exports.RateRequestEndpoint = RateRequestEndpoint;
+exports.RateRequest = RateRequest;

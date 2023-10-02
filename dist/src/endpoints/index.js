@@ -1,33 +1,37 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./Me"), exports);
-__exportStar(require("./ExternalOrder"), exports);
-__exportStar(require("./Transport"), exports);
-__exportStar(require("./User"), exports);
-__exportStar(require("./AddressBook"), exports);
-__exportStar(require("./AdminUser"), exports);
-__exportStar(require("./BulkShipment"), exports);
-__exportStar(require("./Buzzie"), exports);
-__exportStar(require("./Conversation"), exports);
-__exportStar(require("./Country"), exports);
-__exportStar(require("./Distributor"), exports);
-__exportStar(require("./Integration"), exports);
-__exportStar(require("./Label"), exports);
-__exportStar(require("./Matrix"), exports);
-__exportStar(require("./Message"), exports);
-__exportStar(require("./PickupRequest"), exports);
-__exportStar(require("./RateRequest"), exports);
+exports.RateRequest = exports.PickupRequest = exports.Message = exports.Matrix = exports.Label = exports.Integration = exports.Distributor = exports.Country = exports.Conversation = exports.Buzzie = exports.BulkShipment = exports.AdminUser = exports.AddressBook = exports.User = exports.Transport = exports.ExternalOrder = exports.Me = void 0;
+var Me_1 = require("./Me");
+Object.defineProperty(exports, "Me", { enumerable: true, get: function () { return Me_1.Me; } });
+var ExternalOrder_1 = require("./ExternalOrder");
+Object.defineProperty(exports, "ExternalOrder", { enumerable: true, get: function () { return ExternalOrder_1.ExternalOrder; } });
+var Transport_1 = require("./Transport");
+Object.defineProperty(exports, "Transport", { enumerable: true, get: function () { return Transport_1.Transport; } });
+var User_1 = require("./User");
+Object.defineProperty(exports, "User", { enumerable: true, get: function () { return User_1.User; } });
+var AddressBook_1 = require("./AddressBook");
+Object.defineProperty(exports, "AddressBook", { enumerable: true, get: function () { return AddressBook_1.AddressBook; } });
+var AdminUser_1 = require("./AdminUser");
+Object.defineProperty(exports, "AdminUser", { enumerable: true, get: function () { return AdminUser_1.AdminUser; } });
+var BulkShipment_1 = require("./BulkShipment");
+Object.defineProperty(exports, "BulkShipment", { enumerable: true, get: function () { return BulkShipment_1.BulkShipment; } });
+var Buzzie_1 = require("./Buzzie");
+Object.defineProperty(exports, "Buzzie", { enumerable: true, get: function () { return Buzzie_1.Buzzie; } });
+var Conversation_1 = require("./Conversation");
+Object.defineProperty(exports, "Conversation", { enumerable: true, get: function () { return Conversation_1.Conversation; } });
+var Country_1 = require("./Country");
+Object.defineProperty(exports, "Country", { enumerable: true, get: function () { return Country_1.Country; } });
+var Distributor_1 = require("./Distributor");
+Object.defineProperty(exports, "Distributor", { enumerable: true, get: function () { return Distributor_1.Distributor; } });
+var Integration_1 = require("./Integration");
+Object.defineProperty(exports, "Integration", { enumerable: true, get: function () { return Integration_1.Integration; } });
+var Label_1 = require("./Label");
+Object.defineProperty(exports, "Label", { enumerable: true, get: function () { return Label_1.Label; } });
+var Matrix_1 = require("./Matrix");
+Object.defineProperty(exports, "Matrix", { enumerable: true, get: function () { return Matrix_1.Matrix; } });
+var Message_1 = require("./Message");
+Object.defineProperty(exports, "Message", { enumerable: true, get: function () { return Message_1.Message; } });
+var PickupRequest_1 = require("./PickupRequest");
+Object.defineProperty(exports, "PickupRequest", { enumerable: true, get: function () { return PickupRequest_1.PickupRequest; } });
+var RateRequest_1 = require("./RateRequest");
+Object.defineProperty(exports, "RateRequest", { enumerable: true, get: function () { return RateRequest_1.RateRequest; } });

@@ -1,7 +1,6 @@
-import { operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class BulkShipmentEndpoint extends BaseEndpoint {
-    get(query: operations["getBulkShipmentCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class BulkShipment extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -19,7 +18,7 @@ export declare class BulkShipmentEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountryEndpoint = void 0;
+exports.Country = void 0;
 const Base_1 = require("./Base");
-class CountryEndpoint extends Base_1.BaseEndpoint {
+class Country extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/countries", { params: { query } });
@@ -25,4 +25,4 @@ class CountryEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.CountryEndpoint = CountryEndpoint;
+exports.Country = Country;

@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DistributorEndpoint = void 0;
+exports.Distributor = void 0;
 const Base_1 = require("./Base");
-class DistributorEndpoint extends Base_1.BaseEndpoint {
+class Distributor extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/distributors", { params: { query } });
@@ -25,4 +25,4 @@ class DistributorEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.DistributorEndpoint = DistributorEndpoint;
+exports.Distributor = Distributor;

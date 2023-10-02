@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MeEndpoint = void 0;
+exports.Me = void 0;
 const Base_1 = require("./Base");
-class MeEndpoint extends Base_1.BaseEndpoint {
+class Me extends Base_1.BaseEndpoint {
     get() {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/me", {});
         });
     }
 }
-exports.MeEndpoint = MeEndpoint;
+exports.Me = Me;

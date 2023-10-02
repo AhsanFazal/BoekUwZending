@@ -1,7 +1,6 @@
-import { operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class CountryEndpoint extends BaseEndpoint {
-    get(query: operations["getCountryCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Country extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -28,7 +27,7 @@ export declare class CountryEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

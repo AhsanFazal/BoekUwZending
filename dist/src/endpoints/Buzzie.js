@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BuzzieEndpoint = void 0;
+exports.Buzzie = void 0;
 const Base_1 = require("./Base");
-class BuzzieEndpoint extends Base_1.BaseEndpoint {
+class Buzzie extends Base_1.BaseEndpoint {
     get(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/buzzie/postcodes", { params: { query } });
         });
     }
 }
-exports.BuzzieEndpoint = BuzzieEndpoint;
+exports.Buzzie = Buzzie;

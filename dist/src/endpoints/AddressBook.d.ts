@@ -1,7 +1,6 @@
-import { operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class AddressBookEndpoint extends BaseEndpoint {
-    get(query: operations["getAddressBookItemsCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class AddressBook extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 "relation.id"?: unknown;
@@ -90,7 +89,7 @@ export declare class AddressBookEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;

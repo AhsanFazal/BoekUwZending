@@ -1,7 +1,6 @@
-import { components, operations } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class ConversationEndpoint extends BaseEndpoint {
-    get(query: operations["getConversationCollection"]["parameters"]["query"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class Conversation extends BaseEndpoint {
+    get(query: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;
@@ -58,7 +57,7 @@ export declare class ConversationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getById(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getById(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             path: {
                 id: string;
@@ -101,7 +100,7 @@ export declare class ConversationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    post(body: components["schemas"]["Conversation-conversation-write"]): Promise<import("openapi-fetch").FetchResponse<{
+    post(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {
@@ -170,7 +169,7 @@ export declare class ConversationEndpoint extends BaseEndpoint {
             };
         };
     }>>;
-    getMessages(id: string): Promise<import("openapi-fetch").FetchResponse<{
+    getMessages(id: any): Promise<import("openapi-fetch").FetchResponse<{
         parameters: {
             query?: {
                 _page?: number | undefined;

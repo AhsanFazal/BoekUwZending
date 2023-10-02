@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MatrixEndpoint = void 0;
+exports.Matrix = void 0;
 const Base_1 = require("./Base");
-class MatrixEndpoint extends Base_1.BaseEndpoint {
+class Matrix extends Base_1.BaseEndpoint {
     getMatrices(query) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpClient.GET("/matrices", { params: { query } });
@@ -61,4 +61,4 @@ class MatrixEndpoint extends Base_1.BaseEndpoint {
         });
     }
 }
-exports.MatrixEndpoint = MatrixEndpoint;
+exports.Matrix = Matrix;

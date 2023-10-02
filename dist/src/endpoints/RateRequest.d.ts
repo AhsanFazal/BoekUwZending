@@ -1,7 +1,6 @@
-import { components } from "../lib/api";
 import { BaseEndpoint } from "./Base";
-export declare class RateRequestEndpoint extends BaseEndpoint {
-    create(body: components["schemas"]["Shipment-shipment-write"]): Promise<import("openapi-fetch").FetchResponse<{
+export declare class RateRequest extends BaseEndpoint {
+    create(body: any): Promise<import("openapi-fetch").FetchResponse<{
         requestBody?: {
             content: {
                 "application/json": {

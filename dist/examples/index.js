@@ -13,30 +13,65 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const src_1 = __importDefault(require("../src"));
-const CLIENT_ID = process.env.CLIENT_ID || "";
-const CLIENT_SECRET = process.env.CLIENT_SECRET || "";
-function main() {
+const clientId = process.env.CLIENT_ID || "";
+const clientSecret = process.env.CLIENT_SECRET || "";
+const config = { clientId, clientSecret };
+/**
+ * This example shows how to get authenticated user information.
+ */
+function getMe() {
     return __awaiter(this, void 0, void 0, function* () {
-        const client = yield src_1.default.create({
-            clientId: CLIENT_ID,
-            clientSecret: CLIENT_SECRET
-        });
+        const client = yield src_1.default.create(config);
         try {
-            // const { data, error: _ } = await client.externalOrders.get({
-            //   _items_per_page: 10,
-            //   _page: 1
-            // })
-            // console.log(`The ID of the first order is: ${data![0].id}`)
-            // const { data: order, error: __ } = await client.externalOrders.getById(
-            //   data![0]!.id!
-            // )
-            // console.log("The first order is:", order)
-            const { data, error: ___ } = yield client.addressBook.get({});
-            console.log(data);
+            const { data, error: _ } = yield client.me.get();
+            return data;
+            /**
+             * {
+             *  name: "John Doe",                       // Customer name
+             *  number: "123456",                       // Customer number
+             *  id: "[UUID]",                           // Customer UUID
+             *  conversation: "/conversations/[UUID]"   // Conversation URL
+             * }
+             *
+             * The conversation URL can be used to retrieve the conversation history.
+             * See the example below.
+             */
         }
         catch (error) {
-            console.error(error);
+            throw error;
         }
     });
 }
-main();
+/**
+ * This example shows how to get the conversation history of the authenticated user.
+ */
+function getConversation() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const client = yield src_1.default.create(config);
+        const { data: me, error: _ } = yield client.me.get();
+        if (!(me === null || me === void 0 ? void 0 : me.conversation)) {
+            throw new Error("Conversation path not found");
+        }
+        try {
+            const { data, error: _ } = yield client.conversation.getById(me.conversation.split("/").pop());
+            return data;
+            /**
+             * {
+             *   shipment: null,
+             *   shipmentQuotation: null,
+             *   id: "[UUID]",
+             *   createdAt: "[ISO 8601 date string]",
+             *   updatedAt: "[ISO 8601 date string]",
+             *   subject: 'Relatie John Doe',
+             *   subjectType: 'relation',
+             *   unreadMessages: 0,
+             *   lastMessageUpdatedAt: '[ISO 8601 date string]',
+             *   excerpt: "Hi John, ...",
+             * }
+             */
+        }
+        catch (error) {
+            throw error;
+        }
+    });
+}
