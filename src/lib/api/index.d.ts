@@ -12,6 +12,9 @@ export interface paths {
         /** @description User resource response */
         200: {
           content: {
+            "application/json": components["schemas"]["Me"];
+            "application/vnd.api+json": components["schemas"]["Me"];
+            "text/html": components["schemas"]["Me"];
           };
         };
         /** @description Resource not found */
@@ -600,6 +603,12 @@ export type webhooks = Record<string, never>;
 
 export interface components {
   schemas: {
+    Me: {
+      name?: string;
+      number?: string;
+      id?: string;
+      conversation?: string;
+    };
     Address: {
       street?: string;
       number?: string;
