@@ -6586,6 +6586,9 @@ export interface operations {
         /** @description Enable or disable pagination */
         _pagination?: boolean;
       };
+      path: {
+        id: string;
+      };
     };
     responses: {
       /** @description Label collection response */
