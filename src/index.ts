@@ -14,6 +14,9 @@ export enum URLs {
   staging = "https://staging.api.boekuwzending.com"
 }
 
+export const productionURL = URLs.production
+export const stagingURL = URLs.staging
+
 type EndpointTypes = typeof endpoints
 
 type EndpointClassInstances = {
@@ -46,12 +49,10 @@ export default class BoekUwZendingClient {
 
   // Public properties
   public baseURL: string
-  public endpoints: EndpointInstances
+  public endpoints: EndpointInstances = {} as any
 
   constructor(config: ClientConfig) {
-    console.log(config)
     this.baseURL = config.mode === "production" ? productionURL : stagingURL
-    this.endpoints = {} as any
     this.initializeEndpoints()
   }
 
