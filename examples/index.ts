@@ -1,26 +1,64 @@
 import BoekUwZendingClient from "../src"
 
-const CLIENT_ID = process.env.CLIENT_ID || ""
-const CLIENT_SECRET = process.env.CLIENT_SECRET || ""
+const clientId = process.env.CLIENT_ID || ""
+const clientSecret = process.env.CLIENT_SECRET || ""
+const config = { clientId, clientSecret }
 
 /**
- * The address book is a list of addresses that can be used in other requests.
- * This example shows how to get the address book of the authenticated user.
+ * This example shows how to get authenticated user information.
  */
-async function getAddressBook() {
-  const client = await BoekUwZendingClient.create({
-    clientId: CLIENT_ID,
-    clientSecret: CLIENT_SECRET
-  })
+async function getMe() {
+  const client = await BoekUwZendingClient.create(config)
 
   try {
-    const { data, error: _ } = await client.addressBook.get({
-      _items_per_page: 10
-    })
-    console.log(data)
+    const { data, error: _ } = await client.me.get()
+    return data
+    /**
+     * {
+     *  name: "John Doe",                       // Customer name
+     *  number: "123456",                       // Customer number
+     *  id: "[UUID]",                           // Customer UUID
+     *  conversation: "/conversations/[UUID]"   // Conversation URL
+     * }
+     *
+     * The conversation URL can be used to retrieve the conversation history.
+     * See the example below.
+     */
   } catch (error) {
-    console.error(error)
+    throw error
   }
 }
 
-getAddressBook()
+/**
+ * This example shows how to get the conversation history of the authenticated user.
+ */
+async function getConversation() {
+  const client = await BoekUwZendingClient.create(config)
+  const { data: me, error: _ } = await client.me.get()
+  if (!me?.conversation) {
+    throw new Error("Conversation path not found")
+  }
+
+  try {
+    const { data, error: _ } = await client.conversation.getById(
+      me.conversation.split("/").pop() as string
+    )
+    return data
+    /**
+     * {
+     *   shipment: null,
+     *   shipmentQuotation: null,
+     *   id: "[UUID]",
+     *   createdAt: "[ISO 8601 date string]",
+     *   updatedAt: "[ISO 8601 date string]",
+     *   subject: 'Relatie John Doe',
+     *   subjectType: 'relation',
+     *   unreadMessages: 0,
+     *   lastMessageUpdatedAt: '[ISO 8601 date string]',
+     *   excerpt: "Hi John, ...",
+     * }
+     */
+  } catch (error) {
+    throw error
+  }
+}
