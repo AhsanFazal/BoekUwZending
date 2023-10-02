@@ -3326,6 +3326,14 @@
         "operationId": "track_and_traceLabelCollection",
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "shipment.id",
             "in": "query",
             "schema": {}
