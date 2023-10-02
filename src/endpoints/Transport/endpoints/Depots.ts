@@ -1,41 +1,30 @@
 import { BaseEndpoint } from "../../Base"
-import { components, operations } from "../../../lib/api"
 
 export class Depots extends BaseEndpoint {
   // /transport/depots
 
-  public async get(
-    query: operations["getDepotCollection"]["parameters"]["query"]
-  ) {
+  public async get(query: any) {
     return this.httpClient.GET("/transport/depots", { params: { query } })
   }
 
-  public async create(
-    body: components["schemas"]["Depot-transport-depot-collection-write"]
-  ) {
+  public async create(body: any) {
     return this.httpClient.POST("/transport/depots", { body })
   }
 
-  public async getById(id: string) {
+  public async getById(id: any) {
     return this.httpClient.GET(`/transport/depots/{id}`, {
       params: { path: { id } }
     })
   }
 
-  public async updateById(
-    id: string,
-    body: components["schemas"]["Depot-transport-depot-item-write"]
-  ) {
+  public async updateById(id: any, body: any) {
     return this.httpClient.PATCH(`/transport/depots/{id}`, {
       params: { path: { id } },
       body
     })
   }
 
-  public async replaceById(
-    id: string,
-    body: components["schemas"]["Depot-transport-depot-item-write"]
-  ) {
+  public async replaceById(id: any, body: any) {
     return this.httpClient.PUT(`/transport/depots/{id}`, {
       params: { path: { id } },
       body

@@ -1,20 +1,15 @@
-import { components, operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
 export class User extends BaseEndpoint {
-  public async get(
-    query: operations["getUserCollection"]["parameters"]["query"]
-  ) {
+  public async get(query: any) {
     return this.httpClient.GET("/users", { params: { query } })
   }
 
-  public async create(
-    body: components["schemas"]["User-user-collection-write"]
-  ) {
+  public async create(body: any) {
     return this.httpClient.POST("/users", { body })
   }
 
-  public async getById(id: string) {
+  public async getById(id: any) {
     return this.httpClient.GET(`/users/{id}`, { params: { path: { id } } })
   }
 }

@@ -1,45 +1,34 @@
-import { components, operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
 export class PickupRequest extends BaseEndpoint {
-  public async get(
-    query: operations["getPickupRequestCollection"]["parameters"]["query"]
-  ) {
+  public async get(query: any) {
     return this.httpClient.GET("/pickup_requests", { params: { query } })
   }
 
-  public async getById(id: string) {
+  public async getById(id: any) {
     return this.httpClient.GET(`/pickup_requests/{id}`, {
       params: { path: { id } }
     })
   }
 
-  public async create(
-    body: components["schemas"]["PickupRequest-pickup_request-collection-write"]
-  ) {
+  public async create(body: any) {
     return this.httpClient.POST("/pickup_requests", { body })
   }
 
-  public async updateById(
-    id: string,
-    body: components["schemas"]["PickupRequest-pickup_request-collection-write"]
-  ) {
+  public async updateById(id: any, body: any) {
     return this.httpClient.PATCH(`/pickup_requests/{id}`, {
       params: { path: { id } },
       body
     })
   }
 
-  public async deleteById(id: string) {
+  public async deleteById(id: any) {
     return this.httpClient.DELETE(`/pickup_requests/{id}`, {
       params: { path: { id } }
     })
   }
 
-  public async replaceById(
-    id: string,
-    body: components["schemas"]["PickupRequest-pickup_request-collection-write"]
-  ) {
+  public async replaceById(id: any, body: any) {
     return this.httpClient.PUT(`/pickup_requests/{id}`, {
       params: { path: { id } },
       body

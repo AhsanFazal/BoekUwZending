@@ -1,26 +1,21 @@
-import { components, operations } from "../lib/api"
 import { BaseEndpoint } from "./Base"
 
 export class Integration extends BaseEndpoint {
-  public async get(
-    query: operations["getIntegrationCollection"]["parameters"]["query"]
-  ) {
+  public async get(query: any) {
     return this.httpClient.GET("/integrations", { params: { query } })
   }
 
-  public async createShopifyIntegration(
-    body: components["schemas"]["ShopifyServiceIntegration-integration-item-write"]
-  ) {
+  public async createShopifyIntegration(body: any) {
     return this.httpClient.POST("/integrations/shopify", { body })
   }
 
-  public async getShopifyIntegrationById(id: string) {
+  public async getShopifyIntegrationById(id: any) {
     return this.httpClient.GET(`/integrations/shopify/{id}`, {
       params: { path: { id } }
     })
   }
 
-  public async getIntegrationById(id: string) {
+  public async getIntegrationById(id: any) {
     return this.httpClient.GET(`/integrations/{id}`, {
       params: { path: { id } }
     })
