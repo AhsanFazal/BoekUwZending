@@ -34,7 +34,7 @@ enum URLs {
 
 export default class BoekUwZendingClient {
   // Private properties
-  private baseClient: ReturnType<typeof createClient<paths>>
+  private baseClient = createClient<paths>()
   private baseURL: string
   private accessToken?: string
 
@@ -59,7 +59,6 @@ export default class BoekUwZendingClient {
 
   constructor(config: ClientConfig) {
     this.baseURL = config.mode === "staging" ? URLs.staging : URLs.production
-    this.baseClient = createClient<paths>()
   }
 
   private registerEndpoints(): void {
