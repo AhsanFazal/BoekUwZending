@@ -23,28 +23,22 @@ yarn add boekuwzending-api
 
 ## Usage
 
-### Creating a client
+### Create a client
 
 ```typescript
-import { BoekUwZendingClient } from "boekuwzending-api"
+import BoekUwZending, { ClientConfig } from "boekuwzending-api"
 
-const client = new BoekUwZendingClient({
-  clientId: "[CLIENT_ID]",
-  clientSecret: "[CLIENT_SECRET]"
-  mode: "production" // or 'staging' (optional)
-})
+const config: ClientConfig = {
+  clientId: process.env.CLIENT_ID || "",
+  clientSecret: process.env.CLIENT_SECRET || "",
+  mode: "staging"
+}
+const client = await BoekUwZending.create(config)
 ```
 
-### Getting all orders
+#### Getting all orders
 
 ```typescript
-import { BoekUwZendingClient } from "boekuwzending-api"
-
-const client = await BoekUwZendingClient.create({
-  clientId: "[CLIENT_ID]",
-  clientSecret: "[CLIENT_SECRET]"
-})
-
 const { data: externalOrders, error: _ } = await client.endpoints.externalOrders.get({
   _items_per_page: 10,
   _page: 1
