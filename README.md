@@ -1,8 +1,8 @@
 # BoekUwZending TypeScript API Client
 
 [![Build Status](https://github.com/AhsanFazal/BoekUwZending/actions/workflows/build.yml/badge.svg)](https://github.com/AhsanFazal/BoekUwZending/actions)
-[![NPM Version](https://img.shields.io/npm/v/boekuwzending-sdk.svg)](https://www.npmjs.com/package/boekuwzending-sdk)
-[![NPM Downloads](https://img.shields.io/npm/dm/boekuwzending-sdk.svg)](https://www.npmjs.com/package/boekuwzending-sdk)
+[![NPM Version](https://img.shields.io/npm/v/boekuwzending-api.svg)](https://www.npmjs.com/package/boekuwzending-api)
+[![NPM Downloads](https://img.shields.io/npm/dm/boekuwzending-api.svg)](https://www.npmjs.com/package/boekuwzending-api)
 
 Unofficial TypeScript API client for the [BoekUwZending API](https://api.boekuwzending.com/docs/).
 
