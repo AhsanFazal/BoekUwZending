@@ -42,7 +42,7 @@ interface OAuthResponse {
   error_description?: string
 }
 
-export default class BoekUwZendingClient {
+export default class BoekUwZending {
   // Private properties
   private baseClient = createClient<paths>()
   private accessToken?: string
@@ -72,10 +72,8 @@ export default class BoekUwZendingClient {
     this.endpoints = this.endpoints as EndpointInstances
   }
 
-  public static async create(
-    config: ClientConfig
-  ): Promise<BoekUwZendingClient> {
-    const client = new BoekUwZendingClient(config)
+  public static async create(config: ClientConfig): Promise<BoekUwZending> {
+    const client = new BoekUwZending(config)
     await client.authorize(config)
     return client
   }

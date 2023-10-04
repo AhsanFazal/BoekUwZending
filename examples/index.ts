@@ -1,4 +1,4 @@
-import BoekUwZendingClient, { ClientConfig } from "../src"
+import BoekUwZending, { ClientConfig } from "../src"
 
 const config: ClientConfig = {
   clientId: process.env.CLIENT_ID || "",
@@ -10,7 +10,7 @@ const config: ClientConfig = {
  * This example shows how to get authenticated user information.
  */
 async function getMe() {
-  const client = await BoekUwZendingClient.create(config)
+  const client = await BoekUwZending.create(config)
 
   try {
     const { data, error: _ } = await client.endpoints.me.get()
@@ -35,7 +35,7 @@ async function getMe() {
  * This example shows how to get the conversation history of the authenticated user.
  */
 async function getConversation() {
-  const client = await BoekUwZendingClient.create(config)
+  const client = await BoekUwZending.create(config)
   const { data: me, error: _ } = await client.endpoints.me.get()
   if (!me?.conversation) {
     throw new Error("Conversation path not found")
