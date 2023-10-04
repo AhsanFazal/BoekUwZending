@@ -29,9 +29,9 @@ yarn add boekuwzending-api
 import BoekUwZending, { ClientConfig } from "boekuwzending-api"
 
 const config: ClientConfig = {
-  clientId: process.env.CLIENT_ID || "",
-  clientSecret: process.env.CLIENT_SECRET || "",
-  mode: "staging"
+  clientId: "[CLIENT_ID]",        // required
+  clientSecret: "[CLIENT_SECRET]" // required
+  mode: "production" | "staging"  // optional, defaults to "production" 
 }
 const client = await BoekUwZending.create(config)
 ```
